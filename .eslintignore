@@ -1,0 +1,10 @@
+.circleci
+.idea
+.vscode
+/build
+/config
+/coverage
+/node_modules
+/public
+/scripts
+/src/_assets/icons

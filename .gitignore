@@ -1,17 +1,14 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
+# Documentation
+.docz
 
-# production
-/build
+# Jetbrains IDE
+.idea
+.history
 
-# misc
+# Misc
 .DS_Store
 .env.local
 .env.development.local
@@ -21,3 +18,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Production (do not use slash in this case)
+build
+dist
+
+# Testing (do not use slash in this case)
+coverage
+
+# CI, CD, Security and Tools
+*.secret.json
+gen
+genstatic

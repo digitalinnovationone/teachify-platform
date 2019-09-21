@@ -1,0 +1,7 @@
+{
+    "hooks": {
+        "commit-msg": "npm run commitlint",
+        "pre-commit": "npm run code:format && npm run lint",
+        "pre-push": "npm t"
+    }
+}

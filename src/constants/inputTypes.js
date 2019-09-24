@@ -1,12 +1,13 @@
 const inputTypes = {
-    CHECK: 'check',
+    CHECK: 'checkbox',
     DATE: 'date',
     HIDDEN: 'hidden',
     NUMBER: 'number',
+    PASSWORD: 'password',
     RADIO: 'radio',
     SELECT: 'select',
+    TEXT: 'text',
     TEXTAREA: 'textarea',
-    TIME: 'time',
 }
 
 export { inputTypes }

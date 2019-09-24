@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const StyledFormGroup = styled.div`
     margin-bottom: 2rem;
+    position: relative;
 `
 
 const FormGroup = ({ children }) => <StyledFormGroup>{children}</StyledFormGroup>

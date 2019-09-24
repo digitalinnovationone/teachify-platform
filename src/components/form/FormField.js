@@ -7,12 +7,12 @@ import { Field } from 'formik'
 import { colors } from '@helpers/colors'
 
 const StyledField = styled(Field)`
-    background: ${({ invalid }) => (invalid ? '#ffcccc' : colors.background)};
+    background: ${({ invalid }) => (invalid ? colors.errorLight : colors.background)};
     border: 1px solid transparent;
     border-radius: 4px;
     color: ${({ invalid }) => (invalid ? colors.textError : colors.text)};
     font-size: 1.375rem;
-    padding: 1rem 2rem;
+    padding: 1rem ${({ icon }) => (icon ? 4 : 2)}rem;
     transition: all 0.15s ease-in;
     width: 100%;
     &:focus {
@@ -27,11 +27,15 @@ const StyledField = styled(Field)`
 const FormField = props => <StyledField {...props} />
 
 FormField.defaultProps = {
+    icon: '',
+    maxLength: 0,
     placeholder: '',
 }
 
 FormField.propTypes = {
+    icon: PropTypes.string,
     invalid: PropTypes.bool.isRequired,
+    maxLength: PropTypes.number,
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     type: PropTypes.string.isRequired,

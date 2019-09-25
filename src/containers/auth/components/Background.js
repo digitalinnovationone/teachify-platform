@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 const StyledAuthor = styled.span`
     bottom: 10px;
-    color: #333;
+    color: ${colors.textDark};
     display: block;
-    position: absolute;
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
 `
 

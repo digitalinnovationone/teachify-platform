@@ -9,8 +9,8 @@ import { colors } from '@helpers/colors'
 const StyledFormError = styled(ErrorMessage)`
     color: ${colors.error};
     display: block;
-    padding-top: 0.25rem;
     padding-left: 0.5rem;
+    padding-top: 0.25rem;
     text-align: left;
 `
 

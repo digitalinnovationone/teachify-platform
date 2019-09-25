@@ -19,10 +19,10 @@ const StyledCode = styled.input`
     color: ${colors.text};
     font-size: 2rem;
     margin-right: 1rem;
+    ${inputFocus};
     padding: 1rem;
     text-align: center;
     width: 100%;
-    ${inputFocus};
     &:last-child {
         margin-right: 0;
     }

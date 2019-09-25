@@ -17,6 +17,7 @@ import PageLoading from '@components/PageLoading'
 import PrivateRoute from '@components/PrivateRoute'
 
 const systemRoutes = combineRoutes(
+    authRoutes,
     notFoundRoutes, // must be last
 )
 const routes = combineLinkedRoutes(systemRoutes)

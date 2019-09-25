@@ -9,18 +9,18 @@ import Auth from '@containers/auth'
 import Form from '@components/form'
 import Link from '@components/Link'
 import Margin from '@components/Margin'
-import Title from '@components/Title'
 import SubTitle from '@components/SubTitle'
+import Title from '@components/Title'
 
 import { signIn as signInFields } from '../fields'
 import { signIn as signInSchema } from '../schemas'
 
-import bg from '@img/backgrounds/course.jpg'
+import bg from '@img/backgrounds/laptop-class.jpg'
 
 const SignIn = () => {
     const handleFormSubmit = values => console.log(values)
     return (
-        <Auth author={`${i18n.t('labels.designBy')} pikisuperstar / Freepik`} background={bg}>
+        <Auth author={`${i18n.t('labels.designBy')} Freepik`} background={bg}>
             <Title>{i18n.t('titles.signIn')}</Title>
             <SubTitle>{i18n.t('subtitles.signIn')}</SubTitle>
             <Margin bottom={1} top={7}>

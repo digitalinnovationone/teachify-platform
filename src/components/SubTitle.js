@@ -8,6 +8,7 @@ const StyledSubTitle = styled.h3`
     color: ${colors.text};
     font-size: 1rem;
     font-weight: 100;
+    text-transform: lowercase;
 `
 
 const SubTitle = ({ children }) => <StyledSubTitle>{children}</StyledSubTitle>

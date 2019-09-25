@@ -12,8 +12,8 @@ const StyledFormPassword = styled.button`
     background: transparent;
     border: none;
     position: absolute;
-    right: 16px;
-    top: 13px;
+    right: 10px;
+    top: 18px;
     ${StyledIcon} {
         color: ${colors.textLight};
     }

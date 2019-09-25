@@ -1,6 +1,10 @@
-import { object, string } from 'yup'
+import { number, object, string } from 'yup'
 
-const signIn = object().shape({
+const schemas = {
+    code: number()
+        .min(10000)
+        .max(999999)
+        .required(),
     email: string()
         .email()
         .min(5)
@@ -8,11 +12,43 @@ const signIn = object().shape({
         .lowercase()
         .trim()
         .required(),
+    name: string()
+        .min(1)
+        .max(120)
+        .trim()
+        .required(),
     password: string()
         .min(8)
         .max(16)
         .trim()
         .required(),
+    username: string()
+        .min(1)
+        .max(30)
+        .trim()
+        .required(),
+}
+
+const forgotPassword = object().shape({
+    email: schemas.email,
 })
 
-export { signIn }
+const resetPassword = object().shape({
+    code: schemas.code,
+    confirmNewPassword: schemas.password,
+    newPassword: schemas.password,
+})
+
+const signIn = object().shape({
+    email: schemas.email,
+    password: schemas.password,
+})
+
+const signUp = object().shape({
+    email: schemas.email,
+    name: schemas.email,
+    password: schemas.password,
+    username: schemas.email,
+})
+
+export { forgotPassword, resetPassword, signIn, signUp }

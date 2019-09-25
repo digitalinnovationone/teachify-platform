@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { Field } from 'formik'
 
 import { colors } from '@helpers/colors'
+import { inputFocus } from '@helpers/mixins'
 
 const StyledField = styled(Field)`
     background: ${({ invalid }) => (invalid ? colors.errorLight : colors.background)};
@@ -15,10 +16,7 @@ const StyledField = styled(Field)`
     padding: 1rem ${({ icon }) => (icon ? 4 : 2)}rem;
     transition: all 0.15s ease-in;
     width: 100%;
-    &:focus {
-        box-shadow: 0 0 7px rgba(0, 153, 255, 0.75);
-        border-color: ${colors.primary};
-    }
+    ${inputFocus};
     &::placeholder {
         color: ${({ invalid }) => (invalid ? colors.error : colors.textLight)};
     }

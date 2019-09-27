@@ -29,9 +29,12 @@ const messages = {
                 email: 'Email',
                 forgotPassword: 'Esqueceu a senha?',
                 fullName: 'Nome completo',
+                logout: 'Sair',
                 orSignIn: 'Ou acesse uma conta existente',
                 orSignUp: 'Ou crie uma conta',
                 password: 'Senha',
+                profile: 'Perfil',
+                teachifyLogo: 'Teachify logo',
                 username: 'Usuário',
             },
             subtitles: {

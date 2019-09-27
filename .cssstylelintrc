@@ -35,7 +35,7 @@
         "function-comma-space-before": "never",
         "function-linear-gradient-no-nonstandard-direction": true,
         "function-name-case": "lower",
-        "function-parentheses-space-inside": "never",
+        "function-parentheses-space-inside": "never-single-line",
         "function-url-no-scheme-relative": true,
         "function-url-quotes": "always",
         "function-whitespace-after": "always",

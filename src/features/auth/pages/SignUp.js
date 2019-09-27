@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { routes } from '@routes'
-
 import { i18n } from '@i18n'
+import { routes } from '@routes'
 
 import { not } from '@utils/functions'
 

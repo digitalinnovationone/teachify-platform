@@ -1,5 +1,7 @@
 const colors = {
     background: '#f5f6fa',
+    backgroundAlt: '#fdfdfd',
+    backgroundAltHover: '#f2f2f2',
     error: '#ff8080',
     errorLight: '#ffe6e6',
     primary: '#0099ff',

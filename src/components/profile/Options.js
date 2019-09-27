@@ -37,7 +37,7 @@ const Options = ({ expanded, onClick }) => {
         }
     })
 
-    const handleProfileClick = () => navigateTo(`/profile/${id}`)
+    const handleProfileClick = () => navigateTo(`${routes.profile}/${id}`)
 
     const handleLogoutClick = () => {
         logout()

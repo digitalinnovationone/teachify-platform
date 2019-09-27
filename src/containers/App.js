@@ -7,7 +7,7 @@ import { dimensions } from '@helpers/dimensions'
 import Container from '@components/Container'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
-import Menu from '@components/Menu'
+import Menu from '@components/menu'
 
 const StyledApp = styled.div`
     display: grid;

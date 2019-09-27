@@ -6,10 +6,10 @@ import { colors } from '@helpers/colors'
 import { dimensions } from '@helpers/dimensions'
 
 const StyledFooter = styled.footer`
-    background: ${colors.backgroundAlt};
-    border-top: ${borders.default};
+    background: ${colors.background};
+    border-left: ${borders.default};
     grid-area: footer;
-    margin-left: ${dimensions.menuWidth};
+    margin-left: calc(${dimensions.menuWidth} - 1px);
 `
 
 const Footer = () => <StyledFooter />

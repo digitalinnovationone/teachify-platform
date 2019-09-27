@@ -8,6 +8,8 @@ import { borders } from '@helpers/borders'
 import { colors } from '@helpers/colors'
 import { inputFocus } from '@helpers/mixins'
 
+import { toInt } from '@utils/number'
+
 const StyledVerificationCode = styled.div`
     display: flex;
     justify-content: center;
@@ -43,7 +45,7 @@ const VerificationCode = ({ length, onComplete }) => {
             } else {
                 const codeIsComplete = newCode.length === length
                 if (codeIsComplete) {
-                    onComplete(newCode.join(''))
+                    onComplete(toInt(newCode.join('')))
                     target.blur()
                 }
             }

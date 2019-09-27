@@ -6,6 +6,6 @@ import { routes } from '@routes'
 
 import { isLogged } from '@utils/auth'
 
-const PrivateRoute = props => (isLogged() ? <Route {...props} /> : <Redirect to={routes.signIn} />)
+const PrivateRoute = props => (isLogged() ? <Redirect to={routes.home} /> : <Route {...props} />)
 
 export default PrivateRoute

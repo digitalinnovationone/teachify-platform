@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { config } from '@config'
 
-import { routesLogin } from '@features/login/routes'
+import { routes as authRoutes } from '@features/auth/routes'
 
 import { getToken, isLogged } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
@@ -29,13 +29,16 @@ http.interceptors.request.use(request => {
 })
 
 http.interceptors.response.use(null, error => {
-    const {
-        response: { data, status },
-    } = error
-    if (status === CODES.UNAUTHORIZED) {
-        navigateTo(routesLogin.path)
+    if (error.response) {
+        const {
+            response: { data, status },
+        } = error
+        if (status === CODES.UNAUTHORIZED) {
+            navigateTo(authRoutes[0].path)
+        }
+        return Promise.reject(data && data.message)
     }
-    return Promise.reject(data && data.message)
+    return Promise.reject(error.message)
 })
 
 export { http }

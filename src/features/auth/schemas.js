@@ -1,32 +1,40 @@
-import { number, object, string } from 'yup'
+import { number, object, ref, string } from 'yup'
+
+import { i18n } from '@i18n'
 
 const schemas = {
     code: number()
         .min(10000)
         .max(999999)
-        .required(),
+        .required()
+        .label(i18n.t('labels.code')),
+    confirmPassword: string()
+        .oneOf([ref('password')], i18n.t('form.validations.confirmPassword'))
+        .min(8)
+        .max(16)
+        .trim()
+        .required()
+        .label(i18n.t('labels.confirmPassword')),
     email: string()
         .email()
         .min(5)
         .max(255)
         .lowercase()
         .trim()
-        .required(),
+        .required()
+        .label(i18n.t('labels.email')),
     name: string()
         .min(1)
         .max(120)
         .trim()
-        .required(),
+        .required()
+        .label(i18n.t('labels.fullName')),
     password: string()
         .min(8)
         .max(16)
         .trim()
-        .required(),
-    username: string()
-        .min(1)
-        .max(30)
-        .trim()
-        .required(),
+        .required()
+        .label(i18n.t('labels.password')),
 }
 
 const forgotPassword = object().shape({
@@ -35,8 +43,8 @@ const forgotPassword = object().shape({
 
 const resetPassword = object().shape({
     code: schemas.code,
-    confirmNewPassword: schemas.password,
-    newPassword: schemas.password,
+    confirmPassword: schemas.confirmPassword,
+    password: schemas.password,
 })
 
 const signIn = object().shape({
@@ -45,10 +53,10 @@ const signIn = object().shape({
 })
 
 const signUp = object().shape({
+    confirmPassword: schemas.confirmPassword,
     email: schemas.email,
-    name: schemas.email,
+    name: schemas.name,
     password: schemas.password,
-    username: schemas.email,
 })
 
 export { forgotPassword, resetPassword, signIn, signUp }

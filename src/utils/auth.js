@@ -3,8 +3,6 @@ import { isEmpty } from '@utils/functions'
 
 const TOKEN_KEY = 'TeachifyPlatformToken'
 
-const clear = () => window.localStorage.clear()
-
 const getToken = () => window.localStorage.getItem(TOKEN_KEY)
 
 const getUser = () => {
@@ -19,11 +17,9 @@ const getUser = () => {
 }
 
 const isLogged = () => !!getToken()
-
+const removeToken = () => window.localStorage.removeItem(TOKEN_KEY)
+const setToken = token => window.localStorage.setItem(TOKEN_KEY, token)
+const login = token => setToken(token)
 const logout = () => removeToken()
 
-const removeToken = () => window.localStorage.removeItem(TOKEN_KEY)
-
-const setToken = token => window.localStorage.setItem(TOKEN_KEY, token)
-
-export { clear, getToken, getUser, isLogged, logout, setToken }
+export { getToken, getUser, isLogged, login, logout }

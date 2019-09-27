@@ -5,4 +5,17 @@ const handleSuccess = ({ data }) => data
 const responseWas = (responseCode, httpCode) => responseCode === httpCode
 const responseWasOK = responseCode => responseWas(responseCode, CODES.OK)
 
-export { handleError, handleSuccess, responseWasOK }
+const handleAPI = (api, payload) =>
+    api(payload)
+        .then(({ data, status }) => {
+            if (responseWasOK(status)) {
+                return data && data.result
+            }
+            return null
+        })
+        .catch(error => {
+            handleError(error)
+            throw new Error(error)
+        })
+
+export { handleAPI, handleError, handleSuccess, responseWasOK }

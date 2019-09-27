@@ -33,10 +33,10 @@ http.interceptors.response.use(null, error => {
         const {
             response: { data, status },
         } = error
-        if (status === CODES.UNAUTHORIZED) {
+        if (isLogged() && status === CODES.UNAUTHORIZED) {
             navigateTo(authRoutes[0].path)
         }
-        return Promise.reject(data && data.message)
+        return Promise.reject(data && data.result)
     }
     return Promise.reject(error.message)
 })

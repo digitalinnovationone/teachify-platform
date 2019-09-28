@@ -5,14 +5,14 @@ import { selectors } from '../selectors'
 
 import ConfirmCode from '../pages/ConfirmCode'
 
-const mapStateToProps = state => ({
-    loading: selectors.getLoading(state),
-})
-
 const mapDispatchToProps = {
     dispatchConfirmCode: actions.requestConfirmCode,
     dispatchResendCode: actions.requestResendCode,
 }
+
+const mapStateToProps = state => ({
+    loading: selectors.getLoading(state),
+})
 
 export default connect(
     mapStateToProps,

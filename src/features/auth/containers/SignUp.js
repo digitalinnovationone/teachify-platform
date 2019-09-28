@@ -5,13 +5,13 @@ import { selectors } from '../selectors'
 
 import SignUp from '../pages/SignUp'
 
-const mapStateToProps = state => ({
-    loading: selectors.getLoading(state),
-})
-
 const mapDispatchToProps = {
     dispatchSignUp: actions.requestSignUp,
 }
+
+const mapStateToProps = state => ({
+    loading: selectors.getLoading(state),
+})
 
 export default connect(
     mapStateToProps,

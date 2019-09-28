@@ -4,10 +4,13 @@ import styled from 'styled-components'
 
 import { colors } from '@helpers/colors'
 
-const StyledContainer = styled.main`
-    background: ${colors.background};
-    grid-area: main;
-    overflow-y: scroll;
+const StyledContainer = styled.div`
+    background: ${colors.backgroundAlt};
+    border-radius: 7px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 0 2rem;
+    width: 50vw;
 `
 
 const Container = ({ children }) => <StyledContainer>{children}</StyledContainer>

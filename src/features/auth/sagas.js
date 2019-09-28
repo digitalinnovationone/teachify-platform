@@ -16,71 +16,71 @@ import { services } from './services'
 
 function* confirmCode({ payload }) {
     try {
-        yield handleRequest(services.confirmCode, payload, actions.loading)
+        yield handleRequest(services.confirmCode, payload, actions.setLoading)
         yield navigateTo(routes.signIn)
         yield alerts.success({
             text: i18n.t('success.functions.confirmCode'),
             title: i18n.t('success.api'),
         })
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 
 function* forgotPassword({ payload }) {
     try {
-        yield handleRequest(services.forgotPassword, payload, actions.loading)
+        yield handleRequest(services.forgotPassword, payload, actions.setLoading)
         yield navigateTo(`${routes.resetPassword}?email=${payload.email}`)
         yield alerts.success({
             text: i18n.t('success.functions.forgotPassword'),
             title: i18n.t('success.api'),
         })
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 
 function* resendCode({ payload }) {
     try {
-        yield handleRequest(services.resendCode, payload, actions.loading)
+        yield handleRequest(services.resendCode, payload, actions.setLoading)
         yield alerts.success({
             text: i18n.t('success.functions.resendCode'),
             title: i18n.t('success.api'),
         })
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 
 function* resetPassword({ payload }) {
     try {
-        yield handleRequest(services.resetPassword, payload, actions.loading)
+        yield handleRequest(services.resetPassword, payload, actions.setLoading)
         yield navigateTo(routes.signIn)
         yield alerts.success({
             text: i18n.t('success.functions.resetPassword'),
             title: i18n.t('success.api'),
         })
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 
 function* signIn({ payload }) {
     try {
-        const token = yield handleRequest(services.signIn, payload, actions.loading)
+        const token = yield handleRequest(services.signIn, payload, actions.setLoading)
         yield login(token)
         yield navigateTo(routes.home)
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 
 function* signUp({ payload }) {
     try {
-        yield handleRequest(services.signUp, payload, actions.loading)
+        yield handleRequest(services.signUp, payload, actions.setLoading)
         yield navigateTo(`${routes.confirmCode}?email=${payload.email}`)
     } catch (error) {
-        yield handleError(error, actions.loading)
+        yield handleError(error, actions.setLoading)
     }
 }
 

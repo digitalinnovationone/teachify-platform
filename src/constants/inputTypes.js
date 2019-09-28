@@ -2,6 +2,7 @@ const inputTypes = {
     CHECK: 'checkbox',
     DATE: 'date',
     HIDDEN: 'hidden',
+    MASK: 'mask',
     NUMBER: 'number',
     PASSWORD: 'password',
     RADIO: 'radio',

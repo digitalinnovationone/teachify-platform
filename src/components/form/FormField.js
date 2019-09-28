@@ -1,28 +1,28 @@
+import { inputTypes } from '@constants/inputTypes'
+
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
 
 import { Field } from 'formik'
 
-import { colors } from '@helpers/colors'
-import { inputFocus } from '@helpers/mixins'
+import FormArea from './FormArea'
+import FormInput from './FormInput'
+import FormMask from './FormMask'
 
-const StyledField = styled(Field)`
-    background: ${({ invalid }) => (invalid ? colors.errorLight : colors.background)};
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: ${({ invalid }) => (invalid ? colors.textError : colors.text)};
-    font-size: 1.375rem;
-    ${inputFocus};
-    padding: 1rem ${({ icon }) => (icon ? 4 : 2)}rem;
-    transition: all 0.15s ease-in;
-    width: 100%;
-    &::placeholder {
-        color: ${({ invalid }) => (invalid ? colors.error : colors.textLight)};
-    }
-`
-
-const FormField = props => <StyledField {...props} />
+const FormField = props => (
+    <Field
+        {...props}
+        render={({ field }) => {
+            if (props.type === inputTypes.TEXTAREA) {
+                return <FormArea {...field} {...props} />
+            }
+            if (props.type === inputTypes.MASK) {
+                return <FormMask {...field} {...props} />
+            }
+            return <FormInput {...field} {...props} />
+        }}
+    />
+)
 
 FormField.defaultProps = {
     icon: '',

@@ -5,13 +5,13 @@ import { selectors } from '../selectors'
 
 import ForgotPassword from '../pages/ForgotPassword'
 
-const mapStateToProps = state => ({
-    loading: selectors.getLoading(state),
-})
-
 const mapDispatchToProps = {
     dispatchForgotPassword: actions.requestForgotPassword,
 }
+
+const mapStateToProps = state => ({
+    loading: selectors.getLoading(state),
+})
 
 export default connect(
     mapStateToProps,

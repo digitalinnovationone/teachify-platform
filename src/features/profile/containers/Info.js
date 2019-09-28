@@ -3,17 +3,18 @@ import { connect } from 'react-redux'
 import { actions } from '../actions'
 import { selectors } from '../selectors'
 
-import SignIn from '../pages/SignIn'
+import Info from '../pages/Info'
 
 const mapDispatchToProps = {
-    dispatchSignIn: actions.requestSignIn,
+    dispatchGetUser: actions.requestGetUser,
 }
 
 const mapStateToProps = state => ({
     loading: selectors.getLoading(state),
+    user: selectors.getUser(state),
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(SignIn)
+)(Info)

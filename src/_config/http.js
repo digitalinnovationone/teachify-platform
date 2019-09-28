@@ -23,7 +23,7 @@ const http = axios.create({
 
 http.interceptors.request.use(request => {
     if (isLogged()) {
-        request.headers.Authorization = getToken()
+        request.headers.Authorization = `Bearer ${getToken()}`
     }
     return request
 })

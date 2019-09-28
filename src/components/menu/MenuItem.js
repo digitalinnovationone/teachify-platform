@@ -9,7 +9,7 @@ const StyledMenuItem = styled.li``
 
 const MenuItem = ({ icon, label, route }) => (
     <StyledMenuItem>
-        <MenuLink to={route}>
+        <MenuLink label={label} to={route}>
             <Icon icon={icon} />
         </MenuLink>
     </StyledMenuItem>

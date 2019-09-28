@@ -1,18 +1,4 @@
-import { i18n } from '@i18n'
-
-const fields = {
-    code: { icon: 'fas fa-shield-alt', max: 999999, min: 10000, name: 'code', placeholder: i18n.t('labels.code'), type: 'number' },
-    confirmPassword: {
-        icon: 'fas fa-lock',
-        maxLength: 16,
-        name: 'confirmPassword',
-        placeholder: i18n.t('labels.confirmPassword'),
-        type: 'password',
-    },
-    email: { icon: 'fas fa-envelope', maxLength: 255, name: 'email', placeholder: i18n.t('labels.email'), type: 'email' },
-    name: { icon: 'fas fa-address-card', maxLength: 120, name: 'name', placeholder: i18n.t('labels.fullName'), type: 'text' },
-    password: { icon: 'fas fa-lock', maxLength: 16, name: 'password', placeholder: i18n.t('labels.password'), type: 'password' },
-}
+import { fields } from '@helpers/fields'
 
 const forgotPassword = [fields.email]
 

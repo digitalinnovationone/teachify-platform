@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledMargin = styled.div`
-    margin: ${({ all, bottom, left, right, top }) => `${top || all}rem ${right || all}rem ${bottom || all}rem ${left || all}rem`};
+const StyledPadding = styled.div`
+    padding: ${({ all, bottom, left, right, top }) => `${top || all}rem ${right || all}rem ${bottom || all}rem ${left || all}rem`};
 `
 
-const Margin = ({ children, ...props }) => <StyledMargin {...props}>{children}</StyledMargin>
+const Padding = ({ children, ...props }) => <StyledPadding {...props}>{children}</StyledPadding>
 
-Margin.defaultProps = {
+Padding.defaultProps = {
     all: 0,
     bottom: 0,
     left: 0,
@@ -16,7 +16,7 @@ Margin.defaultProps = {
     top: 0,
 }
 
-Margin.propTypes = {
+Padding.propTypes = {
     all: PropTypes.number,
     bottom: PropTypes.number,
     children: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.object, PropTypes.string]).isRequired,
@@ -25,4 +25,4 @@ Margin.propTypes = {
     top: PropTypes.number,
 }
 
-export default Margin
+export default Padding

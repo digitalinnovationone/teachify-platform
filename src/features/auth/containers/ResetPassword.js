@@ -5,13 +5,13 @@ import { selectors } from '../selectors'
 
 import ResetPassword from '../pages/ResetPassword'
 
-const mapStateToProps = state => ({
-    loading: selectors.getLoading(state),
-})
-
 const mapDispatchToProps = {
     dispatchResetPassword: actions.requestResetPassword,
 }
+
+const mapStateToProps = state => ({
+    loading: selectors.getLoading(state),
+})
 
 export default connect(
     mapStateToProps,

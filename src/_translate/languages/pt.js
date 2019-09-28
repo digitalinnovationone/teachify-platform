@@ -34,6 +34,8 @@ const messages = {
                 orSignUp: 'Ou crie uma conta',
                 password: 'Senha',
                 profile: 'Perfil',
+                reportBug: 'Informe um erro',
+                suggestionFeature: 'Sugira uma funcionalidade',
                 teachifyLogo: 'Teachify logo',
                 username: 'Usuário',
             },

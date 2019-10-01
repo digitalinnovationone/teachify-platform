@@ -39,6 +39,8 @@ const Options = ({ expanded, onClick }) => {
 
     const handleProfileClick = () => navigateTo(`${routes.profile}/${id}`)
 
+    const handleUpdatePasswordClick = () => navigateTo(routes.updatePassword)
+
     const handleLogoutClick = () => {
         logout()
         navigateTo(routes.signIn)
@@ -55,6 +57,10 @@ const Options = ({ expanded, onClick }) => {
             <Option onClick={handleProfileClick}>
                 <Icon icon="fas fa-user" />
                 {i18n.t('labels.profile')}
+            </Option>
+            <Option onClick={handleUpdatePasswordClick}>
+                <Icon icon="fas fa-lock" />
+                {i18n.t('labels.updatePassword')}
             </Option>
             <Option onClick={handleLogoutClick}>
                 <Icon icon="fas fa-sign-out-alt" />

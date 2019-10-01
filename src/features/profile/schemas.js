@@ -12,6 +12,12 @@ const updateAddress = object().shape({
     state: schemas.state,
 })
 
+const updatePassword = object().shape({
+    confirmPassword: schemas.confirmPassword,
+    currentPassword: schemas.currentPassword,
+    password: schemas.password,
+})
+
 const updateProfile = object().shape({
     biography: schemas.biography,
     cpf: schemas.cpf,
@@ -21,4 +27,4 @@ const updateProfile = object().shape({
     pictureSource: schemas.pictureSource,
 })
 
-export { updateAddress, updateProfile }
+export { updateAddress, updatePassword, updateProfile }

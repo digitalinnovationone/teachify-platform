@@ -5,11 +5,14 @@ const messages = {
             buttons: {
                 access: 'Acessar',
                 createAccount: 'Criar conta',
+                no: 'Não',
+                removeAccount: 'Deletar conta',
                 resendCode: 'Enviar código novamente',
                 updateAddress: 'Atualizar endereço',
                 updateMyPassword: 'Atualizar minha senha',
                 updatePassword: 'Atualizar senha',
                 updateProfile: 'Atualizar perfil',
+                yes: 'Sim',
             },
             errors: {
                 api: 'Não foi possível processar sua requisição',
@@ -36,6 +39,7 @@ const messages = {
                 confirmPassword: 'Confirmar senha',
                 country: 'País',
                 cpf: 'CPF',
+                currentPassword: 'Senha atual',
                 designBy: 'Desenhado por',
                 district: 'Bairro',
                 email: 'Email',
@@ -55,6 +59,7 @@ const messages = {
                 state: 'Estado',
                 suggestionFeature: 'Sugira uma funcionalidade',
                 teachifyLogo: 'Teachify logo',
+                updatePassword: 'Atualizar senha',
                 username: 'Usuário',
             },
             subtitles: {
@@ -74,9 +79,17 @@ const messages = {
                     resetPassword: 'A senha da sua conta foi resetada, você já pode utilizá-la',
                 },
             },
+            texts: {
+                accountRemoved: 'Sua conta foi removida com sucesso, todos os seus dados foram apagados',
+                passwordUpated: 'Sua senha foi atualizada com sucesso, no próximo acesso você já pode usá-la',
+                removeAccount: 'A deleção da sua conta é uma ação permanente, não poderá ser desfeita',
+            },
             titles: {
+                accountRemoved: 'Conta removida',
                 confirmCode: 'Confirmar código de ativação',
                 forgotPassword: 'Esqueceu sua senha?',
+                passwordUpated: 'Senha atualizada',
+                removeAccount: 'Tem certeza que deseja deletar sua conta?',
                 resetPassword: 'Atualize sua senha',
                 signIn: 'Bem-vindo de volta!',
                 signUp: 'Olá, sem bem-vindo!',

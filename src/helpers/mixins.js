@@ -1,5 +1,7 @@
 import { css } from 'styled-components'
 
+import { createButtonMixin } from '@utils/style'
+
 import { colors } from './colors'
 
 const inputFocus = css`
@@ -16,12 +18,22 @@ const field = css`
     color: ${({ invalid }) => (invalid ? colors.textError : colors.text)};
     font-size: 1.375rem;
     ${inputFocus};
-    padding: 1rem ${({ icon }) => (icon ? 4 : 2)}rem;
+    padding: 1rem ${({ icon }) => (icon.trim() ? 4 : 2)}rem;
     transition: all 0.15s ease-in;
     width: 100%;
     &::placeholder {
         color: ${({ invalid }) => (invalid ? colors.error : colors.textLight)};
     }
+    &[readonly] {
+        color: ${colors.textLight};
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
 `
 
-export { field, inputFocus }
+const btnDanger = createButtonMixin(colors.error, colors.textAlt, colors.errorHover)
+
+const btnPrimary = createButtonMixin(colors.primary, colors.textAlt, colors.primaryHover)
+
+export { btnDanger, btnPrimary, field, inputFocus }

@@ -49,6 +49,13 @@ const cpf = s()
     .matches(regexs.CPF, i18n.t('form.validations.cpf'))
     .label(i18n.t('labels.cpf'))
 
+const currentPassword = s()
+    .min(8)
+    .max(16)
+    .trim()
+    .required()
+    .label(i18n.t('labels.currentPassword'))
+
 const district = s()
     .min(1)
     .max(60)
@@ -108,6 +115,7 @@ const schemas = {
     confirmPassword,
     country,
     cpf,
+    currentPassword,
     district,
     email,
     name,

@@ -11,7 +11,7 @@ const StyledFormArea = styled.textarea`
     resize: none;
 `
 
-const FormArea = props => <StyledFormArea {...props} />
+const FormArea = props => <StyledFormArea {...props} type="text" />
 
 FormArea.defaultProps = defaultProps.field
 FormArea.propTypes = propTypes.field

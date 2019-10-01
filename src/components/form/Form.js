@@ -42,12 +42,12 @@ const Form = ({ fields, initialValues, onSubmit, schema, textButton }) => {
         })
 
     return (
-        <Formik initialValues={initialValues} validationSchema={schema}>
+        <Formik enableReinitialize initialValues={initialValues} validationSchema={schema}>
             {({ errors, setFieldTouched, touched, validateForm, values }) => (
                 <StyledForm>
                     {fields.map((field, index) => (
                         <FormGroup key={field.name}>
-                            {field.icon && <FormIcon icon={field.icon} />}
+                            {!!field.icon.trim() && <FormIcon icon={field.icon} />}
                             <FormField
                                 {...field}
                                 invalid={!!errors[field.name] && !!touched[field.name]}

@@ -9,6 +9,7 @@ import { not } from '@utils/functions'
 
 import App from '@containers/App'
 
+import Button from '@components/Button'
 import Center from '@components/Center'
 import Container from '../components/Container'
 import Form from '@components/form'
@@ -20,20 +21,23 @@ import Padding from '@components/Padding'
 import { updateAddress as updateAddressFields, updateProfile as updateProfileFields } from '../fields'
 import { updateAddress as updateAddressSchema, updateProfile as updateProfileSchema } from '../schemas'
 
-const Info = ({ dispatchGetUser, loading, user, match }) => {
-    // useEffect(() => {
-    //     const { params } = match
-    //     if (params) {
-    //         dispatchGetUser({ id: params.id })
-    //     }
-    // }, [])
-    const handleFormSubmit = values => console.log(values)
+const Info = ({ dispatchGetUser, dispatchRemoveUser, dispatchUpdateUser, loading, user, match }) => {
+    useEffect(() => {
+        const { params } = match
+        if (params) {
+            dispatchGetUser({ id: params.id })
+        }
+    }, [dispatchGetUser, match])
+
+    const handleFormSubmit = values => dispatchUpdateUser(values)
+
+    const handleRemoveAccount = () => dispatchRemoveUser({ id: user.id })
 
     return (
         <App>
             <Padding all={3}>
-                <If condition={not(loading)} el={<Loading />}>
-                    <Center>
+                <Center>
+                    <If condition={not(loading)} el={<Loading />}>
                         <Margin bottom={3}>
                             <Container>
                                 <Form
@@ -54,8 +58,17 @@ const Info = ({ dispatchGetUser, loading, user, match }) => {
                                 textButton={i18n.t('buttons.updateAddress')}
                             />
                         </Container>
-                    </Center>
-                </If>
+                        <Margin top={3}>
+                            <Container>
+                                <Padding all={2}>
+                                    <Button danger onClick={handleRemoveAccount} type="button">
+                                        {i18n.t('buttons.removeAccount')}
+                                    </Button>
+                                </Padding>
+                            </Container>
+                        </Margin>
+                    </If>
+                </Center>
             </Padding>
         </App>
     )
@@ -63,6 +76,8 @@ const Info = ({ dispatchGetUser, loading, user, match }) => {
 
 Info.propTypes = {
     dispatchGetUser: PropTypes.func.isRequired,
+    dispatchRemoveUser: PropTypes.func.isRequired,
+    dispatchUpdateUser: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     match: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,

@@ -1,8 +1,6 @@
-import { mocks } from '@mocks'
-
 const store = {
     loading: false,
-    user: mocks.user,
+    user: {},
 }
 
 export { store }

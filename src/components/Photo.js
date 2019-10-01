@@ -8,6 +8,8 @@ import { colors } from '@helpers/colors'
 
 import If from './If'
 
+const PICTURE_SIZE = '60px'
+
 const photo = css`
     border-radius: 100%;
     margin-right: 1rem;
@@ -15,7 +17,9 @@ const photo = css`
 `
 
 const StyledImage = styled.img`
+    height: ${PICTURE_SIZE};
     ${photo};
+    width: ${PICTURE_SIZE};
 `
 
 const StyledAlt = styled.span`

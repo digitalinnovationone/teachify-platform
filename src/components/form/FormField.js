@@ -26,7 +26,7 @@ const FormField = props => (
 
 FormField.defaultProps = {
     icon: '',
-    maxLength: 0,
+    maxLength: null,
     placeholder: '',
 }
 

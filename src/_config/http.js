@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { config } from '@config'
 
-import { routes as authRoutes } from '@features/auth/routes'
+import { routes as authRoutes } from '@profiles/user/features/auth/routes'
 
 import { getToken, isLogged } from '@utils/auth'
 import { navigateTo } from '@utils/browser'

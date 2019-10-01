@@ -1,10 +1,18 @@
 import { all } from 'redux-saga/effects'
 
-import { sagas as authSagas } from '@features/auth/sagas'
-import { sagas as profileSagas } from '@features/profile/sagas'
+import { isAdmin } from '@utils/auth'
+
+import { sagas as authSagas } from '@profiles/user/features/auth/sagas'
+import { sagas as profileSagas } from '@profiles/user/features/profile/sagas'
+
+import { sagas as courseSagas } from '@profiles/admin/features/course/sagas'
 
 function* sagas() {
-    yield all([authSagas(), profileSagas()])
+    const allSagas = [authSagas(), profileSagas()]
+    if (isAdmin()) {
+        allSagas.push(courseSagas())
+    }
+    yield all(allSagas)
 }
 
 export { sagas }

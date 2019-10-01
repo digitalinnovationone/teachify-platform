@@ -4,13 +4,23 @@ import { connectRouter } from 'connected-react-router'
 
 import { history } from './history'
 
-import { reducers as authReducers } from '@features/auth/reducers'
-import { reducers as profileReducers } from '@features/profile/reducers'
+import { isAdmin } from '@utils/auth'
 
-const reducers = combineReducers({
+import { reducers as authReducers } from '@profiles/user/features/auth/reducers'
+import { reducers as profileReducers } from '@profiles/user/features/profile/reducers'
+
+import { reducers as courseReducers } from '@profiles/admin/features/course/reducers'
+
+const allReducers = {
     authReducers,
     profileReducers,
     router: connectRouter(history),
-})
+}
+
+if (isAdmin()) {
+    allReducers.courseReducers = courseReducers
+}
+
+const reducers = combineReducers(allReducers)
 
 export { reducers }

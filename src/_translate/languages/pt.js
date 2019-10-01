@@ -32,6 +32,7 @@ const messages = {
             },
             labels: {
                 address: 'Endereço',
+                adminCourses: 'Administrador de cursos',
                 biography: 'Biografia',
                 cep: 'CEP',
                 city: 'Cidade',

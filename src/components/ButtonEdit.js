@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 import { colors } from '@helpers/colors'
 
-const StyledButtonCancel = styled.button`
-    background: ${colors.error};
+const StyledButtonEdit = styled.button`
+    background: ${colors.warning};
     border: none;
     border-radius: 4px;
     color: ${colors.textAlt};
@@ -13,20 +13,20 @@ const StyledButtonCancel = styled.button`
     padding: 0.5rem 1rem;
     transition: background 0.2s linear;
     &:hover {
-        background: ${colors.errorHover};
+        background: ${colors.warningHover};
     }
 `
 
-const ButtonCancel = ({ children, onClick }) => (
-    <StyledButtonCancel onClick={onClick} type="button">
+const ButtonEdit = ({ children, onClick }) => (
+    <StyledButtonEdit onClick={onClick} type="button">
         {children}
-    </StyledButtonCancel>
+    </StyledButtonEdit>
 )
 
-ButtonCancel.propTypes = {
+ButtonEdit.propTypes = {
     children: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
 }
 
-export { StyledButtonCancel }
-export default ButtonCancel
+export { StyledButtonEdit }
+export default ButtonEdit

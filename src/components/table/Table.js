@@ -10,21 +10,25 @@ const StyledTable = styled.table`
     width: 100%;
 `
 
-const Table = ({ columns, data, loading }) => (
+const Table = ({ columns, ...props }) => (
     <StyledTable>
         <TableHeader columns={columns} />
-        <TableBody columns={columns} data={data} loading={loading} />
+        <TableBody {...props} columns={columns} />
     </StyledTable>
 )
 
 Table.defaultProps = {
     loading: false,
+    onEdit: null,
+    onRemove: null,
 }
 
 Table.propTypes = {
     columns: PropTypes.arrayOf(PropTypes.string).isRequired,
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     loading: PropTypes.bool,
+    onEdit: PropTypes.func,
+    onRemove: PropTypes.func,
 }
 
 export default Table

@@ -34,6 +34,7 @@ const messages = {
                 },
             },
             labels: {
+                actions: '',
                 address: 'Endereço',
                 adminCourses: 'Administrador de cursos',
                 biography: 'Biografia',
@@ -96,6 +97,7 @@ const messages = {
                 accountRemoved: 'Sua conta foi removida com sucesso, todos os seus dados foram apagados',
                 passwordUpated: 'Sua senha foi atualizada com sucesso, no próximo acesso você já pode usá-la',
                 removeAccount: 'A deleção da sua conta é uma ação permanente, não poderá ser desfeita',
+                removeCourse: 'A deleção de curso é uma ação permanente, não poderá ser desfeita',
                 sectionNotSelected: 'Você precisa selecionar uma seção para adicioná-la',
             },
             titles: {
@@ -104,6 +106,7 @@ const messages = {
                 forgotPassword: 'Esqueceu sua senha?',
                 passwordUpated: 'Senha atualizada',
                 removeAccount: 'Tem certeza que deseja deletar sua conta?',
+                removeCourse: 'Tem certeza que deseja deletar um curso?',
                 resetPassword: 'Atualize sua senha',
                 sectionNotSelected: 'Não foi possível criar uma aula',
                 signIn: 'Bem-vindo de volta!',

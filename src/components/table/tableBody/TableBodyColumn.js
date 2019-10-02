@@ -12,22 +12,28 @@ const StyledTableBodyColumn = styled.td`
     font-size: 0.95rem;
     font-weight: 300;
     padding: ${paddings.tableColumn};
-    text-align: ${({ colSpan }) => (colSpan ? 'center' : 'left')};
+    text-align: ${({ colSpan, hasActions }) => (colSpan || hasActions ? 'center' : 'left')};
     &:last-child {
         border-right: none;
     }
 `
 
-const TableBodyColumn = ({ children, colSpan }) => <StyledTableBodyColumn colSpan={colSpan}>{children}</StyledTableBodyColumn>
+const TableBodyColumn = ({ children, colSpan, hasActions }) => (
+    <StyledTableBodyColumn colSpan={colSpan} hasActions={hasActions}>
+        {children}
+    </StyledTableBodyColumn>
+)
 
 TableBodyColumn.defaultProps = {
     children: '',
     colSpan: null,
+    hasActions: false,
 }
 
 TableBodyColumn.propTypes = {
     children: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.number, PropTypes.object, PropTypes.string]),
     colSpan: PropTypes.number,
+    hasActions: PropTypes.bool,
 }
 
 export default TableBodyColumn

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { withRouter } from 'react-router'
 
@@ -33,13 +33,21 @@ const SECTIONS_WIDTH = 35
 const COURSES_GAP = 3.5
 const COURSES_WIDTH = 100 - SECTIONS_WIDTH - COURSES_GAP
 
-const FormPage = ({ course, courses, dispatchSaveCourse, loading }) => {
+const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
+    const { params } = match
+
     const [payload, updatePayload] = useState({})
     const [classes, updateClasses] = useState([])
     const [clazz, updateClazz] = useState({})
     const [section, updateSection] = useState({})
     const [showSectionModal, updateShowSectionModal] = useState(false)
     const [showClassModal, updateShowClassModal] = useState(false)
+
+    useEffect(() => {
+        if (params && params.id) {
+            console.log(params.id)
+        }
+    }, [params])
 
     const handleAddSection = () => {
         updateShowSectionModal(true)
@@ -185,6 +193,7 @@ FormPage.propTypes = {
     courses: PropTypes.arrayOf(PropTypes.object).isRequired,
     dispatchSaveCourse: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
+    match: PropTypes.object.isRequired,
 }
 
 export default withRouter(FormPage)

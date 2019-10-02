@@ -15,6 +15,8 @@ const colors = {
     textDark: '#333333',
     textError: '#ff4d4d',
     textLight: '#b3b3b3',
+    warning: '#ffcc00',
+    warningHover: '#cca300',
 }
 
 export { colors }

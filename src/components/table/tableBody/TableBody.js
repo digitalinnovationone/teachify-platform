@@ -1,3 +1,5 @@
+import { columns as cols } from '@constants/columns'
+
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -8,6 +10,9 @@ import { borders } from '@helpers/borders'
 
 import { isNotEmpty, not } from '@utils/functions'
 
+import ButtonCancel, { StyledButtonCancel } from '../../ButtonCancel'
+import ButtonEdit, { StyledButtonEdit } from '../../ButtonEdit'
+import Icon from '../../Icon'
 import If from '../../If'
 import Loading from '../../Loading'
 import TableBodyColumn from './TableBodyColumn'
@@ -16,9 +21,16 @@ import TableBodyRow from './TableBodyRow'
 const StyledTableBody = styled.tbody`
     border: ${borders.default};
     border-top: none;
+    ${StyledButtonCancel} {
+        margin-right: 0;
+    }
+
+    ${StyledButtonEdit} {
+        margin-right: 0.5rem;
+    }
 `
 
-const TableBody = ({ columns, data, loading }) => (
+const TableBody = ({ columns, data, loading, onEdit, onRemove }) => (
     <StyledTableBody>
         <If
             condition={not(loading)}
@@ -41,7 +53,20 @@ const TableBody = ({ columns, data, loading }) => (
                 {data.map(item => (
                     <TableBodyRow key={item.id}>
                         {columns.map(column => (
-                            <TableBodyColumn key={column}>{item[column]}</TableBodyColumn>
+                            <If
+                                condition={column === cols.actions}
+                                el={<TableBodyColumn>{item[column]}</TableBodyColumn>}
+                                key={column}
+                            >
+                                <TableBodyColumn hasActions={column === cols.actions}>
+                                    <ButtonEdit onClick={() => onEdit(item)}>
+                                        <Icon icon="fas fa-pencil-alt" />
+                                    </ButtonEdit>
+                                    <ButtonCancel onClick={() => onRemove(item)}>
+                                        <Icon icon="fas fa-trash" />
+                                    </ButtonCancel>
+                                </TableBodyColumn>
+                            </If>
                         ))}
                     </TableBodyRow>
                 ))}
@@ -52,12 +77,16 @@ const TableBody = ({ columns, data, loading }) => (
 
 TableBody.defaultProps = {
     loading: false,
+    onEdit: null,
+    onRemove: null,
 }
 
 TableBody.propTypes = {
     columns: PropTypes.arrayOf(PropTypes.string).isRequired,
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     loading: PropTypes.bool,
+    onEdit: PropTypes.func,
+    onRemove: PropTypes.func,
 }
 
 export default TableBody

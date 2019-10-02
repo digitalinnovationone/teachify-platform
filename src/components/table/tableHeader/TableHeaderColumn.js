@@ -14,15 +14,23 @@ const StyledTableHeaderColumn = styled.th`
     font-weight: 500;
     padding: ${paddings.tableColumn};
     text-align: left;
+    width: ${({ hasActions }) => (hasActions ? '165px' : 'initial')};
     &:last-child {
         border-right: none;
     }
 `
 
-const TableHeaderColumn = ({ children }) => <StyledTableHeaderColumn>{i18n.t(`labels.${children}`)}</StyledTableHeaderColumn>
+const TableHeaderColumn = ({ children, hasActions }) => (
+    <StyledTableHeaderColumn hasActions={hasActions}>{i18n.t(`labels.${children}`)}</StyledTableHeaderColumn>
+)
+
+TableHeaderColumn.defaultProps = {
+    hasActions: false,
+}
 
 TableHeaderColumn.propTypes = {
     children: PropTypes.string.isRequired,
+    hasActions: PropTypes.bool,
 }
 
 export default TableHeaderColumn

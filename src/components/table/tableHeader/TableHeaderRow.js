@@ -1,3 +1,5 @@
+import { columns as cols } from '@constants/columns'
+
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -14,7 +16,9 @@ const StyledTableHeaderRow = styled.tr`
 const TableHeaderRow = ({ columns }) => (
     <StyledTableHeaderRow>
         {columns.map(column => (
-            <TableHeaderColumn key={column}>{column}</TableHeaderColumn>
+            <TableHeaderColumn hasActions={column === cols.actions} key={column}>
+                {column}
+            </TableHeaderColumn>
         ))}
     </StyledTableHeaderRow>
 )

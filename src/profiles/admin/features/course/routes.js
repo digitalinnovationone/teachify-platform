@@ -6,6 +6,7 @@ const List = lazy(() => import('./containers/List'))
 const routes = [
     { component: () => <List />, name: 'courseList', path: '/admin/courses' },
     { component: () => <Form />, name: 'courseForm', path: '/admin/courses/form' },
+    { component: () => <Form />, name: 'courseFormEdit', path: '/admin/courses/form/:id' },
 ]
 
 export { routes }

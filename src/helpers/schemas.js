@@ -1,6 +1,6 @@
 import { regexs } from '@constants/regexs'
 
-import { number as n, ref, string as s } from 'yup'
+import { boolean as b, number as n, ref, string as s } from 'yup'
 
 import { i18n } from '@i18n'
 
@@ -125,6 +125,8 @@ const pictureSource = s()
     .url()
     .label(i18n.t('labels.pictureSource'))
 
+const published = b().label(i18n.t('labels.published'))
+
 const sectionName = s()
     .min(1)
     .max(30)
@@ -172,6 +174,7 @@ const schemas = {
     password,
     phone,
     pictureSource,
+    published,
     sectionName,
     source,
     state,

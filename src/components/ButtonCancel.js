@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import { colors } from '@helpers/colors'
 
+import { StyledIcon } from './Icon'
+
 const StyledButtonCancel = styled.button`
     background: ${colors.error};
     border: none;
@@ -15,6 +17,9 @@ const StyledButtonCancel = styled.button`
     &:hover {
         background: ${colors.errorHover};
     }
+    ${StyledIcon} {
+        margin-right: 0;
+    }
 `
 
 const ButtonCancel = ({ children, onClick }) => (
@@ -24,7 +29,7 @@ const ButtonCancel = ({ children, onClick }) => (
 )
 
 ButtonCancel.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]).isRequired,
     onClick: PropTypes.func.isRequired,
 }
 

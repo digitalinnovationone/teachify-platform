@@ -7,6 +7,7 @@ import List from '../pages/List'
 
 const mapDispatchToProps = {
     dispatchGetCourses: actions.requestGetCourses,
+    dispatchRemoveCourse: actions.requestRemoveCourse,
 }
 
 const mapStateToProps = state => ({

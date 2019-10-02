@@ -11,6 +11,7 @@ const course = object().shape({
     categories: schemas.categories,
     describe: schemas.describe,
     name: schemas.courseName,
+    published: schemas.published,
     thumbnail: schemas.thumbnail,
 })
 

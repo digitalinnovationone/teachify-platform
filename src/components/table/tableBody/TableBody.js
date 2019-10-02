@@ -30,7 +30,7 @@ const StyledTableBody = styled.tbody`
     }
 `
 
-const TableBody = ({ columns, data, loading, onEdit, onRemove }) => (
+const TableBody = ({ columns, data, loading, onColumnRender, onEdit, onRemove }) => (
     <StyledTableBody>
         <If
             condition={not(loading)}
@@ -55,7 +55,11 @@ const TableBody = ({ columns, data, loading, onEdit, onRemove }) => (
                         {columns.map(column => (
                             <If
                                 condition={column === cols.actions}
-                                el={<TableBodyColumn>{item[column]}</TableBodyColumn>}
+                                el={
+                                    <TableBodyColumn>
+                                        {onColumnRender ? onColumnRender(item[column], column) : item[column]}
+                                    </TableBodyColumn>
+                                }
                                 key={column}
                             >
                                 <TableBodyColumn hasActions={column === cols.actions}>
@@ -77,6 +81,7 @@ const TableBody = ({ columns, data, loading, onEdit, onRemove }) => (
 
 TableBody.defaultProps = {
     loading: false,
+    onColumnRender: null,
     onEdit: null,
     onRemove: null,
 }
@@ -85,6 +90,7 @@ TableBody.propTypes = {
     columns: PropTypes.arrayOf(PropTypes.string).isRequired,
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     loading: PropTypes.bool,
+    onColumnRender: PropTypes.func,
     onEdit: PropTypes.func,
     onRemove: PropTypes.func,
 }

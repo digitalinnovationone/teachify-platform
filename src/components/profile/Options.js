@@ -6,6 +6,7 @@ import { i18n } from '@i18n'
 import { routes } from '@routes'
 
 import { colors } from '@helpers/colors'
+import { zIndexes } from '@helpers/zIndexes'
 
 import { getUser, logout } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
@@ -21,9 +22,10 @@ const StyledOptions = styled.ul`
     opacity: ${({ expanded }) => (expanded ? 1 : 0)};
     position: absolute;
     top: 80px;
-    transform: ${({ expanded }) => (expanded ? 'translateY(0)' : 'translateY(-200px)')};
+    transform: ${({ expanded }) => (expanded ? 'translateY(0)' : 'translateY(-250px)')};
     transition: all 0.4s ease-in-out;
     width: 95%;
+    z-index: ${zIndexes.profileOptions};
 `
 
 const Options = ({ expanded, onClick }) => {

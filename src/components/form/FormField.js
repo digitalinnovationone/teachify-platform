@@ -6,6 +6,7 @@ import React from 'react'
 import { Field } from 'formik'
 
 import FormArea from './FormArea'
+import FormCheck from './FormCheck'
 import FormInput from './FormInput'
 import FormMask from './FormMask'
 
@@ -19,6 +20,9 @@ const FormField = props => (
             if (props.type === inputTypes.MASK) {
                 return <FormMask {...field} {...props} />
             }
+            if (props.type === inputTypes.CHECK) {
+                return <FormCheck {...field} {...props} />
+            }
             return <FormInput {...field} {...props} />
         }}
     />
@@ -28,6 +32,7 @@ FormField.defaultProps = {
     icon: '',
     maxLength: null,
     placeholder: '',
+    value: '',
 }
 
 FormField.propTypes = {
@@ -37,6 +42,7 @@ FormField.propTypes = {
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     type: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.number]),
 }
 
 export default FormField

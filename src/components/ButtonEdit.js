@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import { colors } from '@helpers/colors'
 
+import { StyledIcon } from './Icon'
+
 const StyledButtonEdit = styled.button`
     background: ${colors.warning};
     border: none;
@@ -15,6 +17,9 @@ const StyledButtonEdit = styled.button`
     &:hover {
         background: ${colors.warningHover};
     }
+    ${StyledIcon} {
+        margin-right: 0;
+    }
 `
 
 const ButtonEdit = ({ children, onClick }) => (
@@ -24,7 +29,7 @@ const ButtonEdit = ({ children, onClick }) => (
 )
 
 ButtonEdit.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]).isRequired,
     onClick: PropTypes.func.isRequired,
 }
 

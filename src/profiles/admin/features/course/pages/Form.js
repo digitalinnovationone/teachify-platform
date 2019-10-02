@@ -33,7 +33,7 @@ const SECTIONS_WIDTH = 35
 const COURSES_GAP = 3.5
 const COURSES_WIDTH = 100 - SECTIONS_WIDTH - COURSES_GAP
 
-const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
+const FormPage = ({ course, courses, dispatchGetCourse, dispatchSaveCourse, loading, match }) => {
     const { params } = match
 
     const [payload, updatePayload] = useState({})
@@ -45,9 +45,13 @@ const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
 
     useEffect(() => {
         if (params && params.id) {
-            console.log(params.id)
+            dispatchGetCourse({ id: params.id })
         }
-    }, [params])
+    }, [dispatchGetCourse, params])
+
+    useEffect(() => {
+        updatePayload(course)
+    }, [course])
 
     const handleAddSection = () => {
         updateShowSectionModal(true)
@@ -71,17 +75,28 @@ const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
 
     const handleClassSubmit = values => {
         if (section && section.name) {
-            const newSection = {
-                ...section,
-                classes: [...(section.classes || []), values],
+            const newSection = { ...section }
+            const newSections = [...payload.sections]
+
+            if (clazz) {
+                const newClasses = [...section.classes]
+                newClasses.splice(newClasses.indexOf(clazz), 1, values)
+                newSection.classes = newClasses
+            } else {
+                newSection.classes = [...(section.classes || []), values]
             }
-            payload.sections.splice(payload.sections.indexOf(section), 1, newSection)
-            updateClasses([...classes, values])
+
+            newSections.splice(payload.sections.indexOf(section), 1, newSection)
             updateSection(newSection)
-            updatePayload({
-                ...payload,
-                sections: [...payload.sections],
+            updateClasses(() => {
+                if (clazz) {
+                    const newClasses = [...classes]
+                    newClasses.splice(newClasses.indexOf(clazz), 1, values)
+                    return [...newClasses]
+                }
+                return [...classes, values]
             })
+            updatePayload({ ...payload, sections: [...newSections] })
             updateShowClassModal(false)
         } else {
             alerts.error({
@@ -91,7 +106,7 @@ const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
         }
     }
 
-    const handleCourseSubmit = values => dispatchSaveCourse({ ...values, ...payload })
+    const handleCourseSubmit = values => dispatchSaveCourse({ ...values, sections: payload.sections || [] })
 
     const handleEditSection = data => {
         updateSection(data)
@@ -99,18 +114,34 @@ const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
     }
 
     const handleEditClass = data => {
-        updateSection(data)
+        updateClazz(data)
         updateShowClassModal(true)
     }
 
-    const handleRemoveSection = data => console.log(data)
-    const handleRemoveClass = data => console.log(data)
+    const handleRemoveSection = data => {
+        updatePayload({ ...payload, sections: [...(payload.sections || [])].filter(s => s.id !== data.id) })
+        updateShowSectionModal(false)
+    }
+
+    const handleRemoveClass = data => {
+        const newSection = { ...section }
+        const newSections = [...payload.sections]
+        const newClasses = [...section.classes].filter(c => c.id !== data.id)
+        newSection.classes = newClasses
+        newSections.splice(payload.sections.indexOf(section), 1, newSection)
+        updateSection(newSection)
+        updateClasses([...classes].filter(c => c.id !== data.id))
+        updatePayload({ ...payload, sections: [...newSections] })
+    }
 
     const handleSectionSubmit = values => {
-        updatePayload({
-            ...payload,
-            sections: [...(payload.sections || []), values],
-        })
+        const newSections = [...(payload.sections || [])]
+        if (section) {
+            newSections.splice(newSections.indexOf(section), 1, values)
+        } else {
+            newSections.push(values)
+        }
+        updatePayload({ ...payload, sections: newSections })
         updateShowSectionModal(false)
     }
 
@@ -191,6 +222,7 @@ const FormPage = ({ course, courses, dispatchSaveCourse, loading, match }) => {
 FormPage.propTypes = {
     course: PropTypes.PropTypes.object.isRequired,
     courses: PropTypes.arrayOf(PropTypes.object).isRequired,
+    dispatchGetCourse: PropTypes.func.isRequired,
     dispatchSaveCourse: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
     match: PropTypes.object.isRequired,

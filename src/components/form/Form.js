@@ -54,6 +54,7 @@ const Form = ({ actions, fields, initialValues, onSubmit, schema, textButton }) 
                                 {...field}
                                 invalid={!!errors[field.name] && !!touched[field.name]}
                                 type={types[index] || field.type}
+                                value={values[field.name]}
                             />
                             {field.type === inputTypes.PASSWORD && (
                                 <FormPassword index={index} onClick={handlePasswordClick} type={types[index]} />

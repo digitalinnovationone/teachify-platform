@@ -10,7 +10,7 @@ const field = {
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
 }
 
 const propTypes = {

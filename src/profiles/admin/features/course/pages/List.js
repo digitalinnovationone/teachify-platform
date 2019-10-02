@@ -16,12 +16,22 @@ import Icon from '@components/Icon'
 import Padding from '@components/Padding'
 import Table from '@components/table'
 
-const List = ({ courses, dispatchGetCourses, loading }) => {
+const List = ({ courses, dispatchGetCourses, dispatchRemoveCourse, loading }) => {
     useEffect(() => {
         dispatchGetCourses()
     }, [dispatchGetCourses])
 
     const handleAddCourseClick = () => navigateTo(routes.courseForm)
+
+    const handleColumnRender = (value, column) => {
+        if (column === 'published') {
+            if (value) {
+                return <Icon icon="fas fa-check" />
+            }
+            return <Icon icon="fas fa-times" />
+        }
+        return value
+    }
 
     const handleEditCourse = course => navigateTo(`${routes.courseForm}/${course.id}`)
 
@@ -33,7 +43,7 @@ const List = ({ courses, dispatchGetCourses, loading }) => {
             })
             .then(result => {
                 if (result && result.value) {
-                    console.log(course)
+                    dispatchRemoveCourse(course)
                 }
             })
 
@@ -41,9 +51,10 @@ const List = ({ courses, dispatchGetCourses, loading }) => {
         <App>
             <Padding all={2}>
                 <Table
-                    columns={['name', columns.actions]}
+                    columns={['name', 'published', columns.actions]}
                     data={courses}
                     loading={loading}
+                    onColumnRender={handleColumnRender}
                     onEdit={handleEditCourse}
                     onRemove={handleRemoveCourse}
                 />
@@ -58,6 +69,7 @@ const List = ({ courses, dispatchGetCourses, loading }) => {
 List.propTypes = {
     courses: PropTypes.array.isRequired,
     dispatchGetCourses: PropTypes.func.isRequired,
+    dispatchRemoveCourse: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
 }
 

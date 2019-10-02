@@ -19,6 +19,7 @@ const Table = ({ columns, ...props }) => (
 
 Table.defaultProps = {
     loading: false,
+    onColumnRender: null,
     onEdit: null,
     onRemove: null,
 }
@@ -27,6 +28,7 @@ Table.propTypes = {
     columns: PropTypes.arrayOf(PropTypes.string).isRequired,
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     loading: PropTypes.bool,
+    onColumnRender: PropTypes.func,
     onEdit: PropTypes.func,
     onRemove: PropTypes.func,
 }

@@ -6,6 +6,7 @@ import { selectors } from '../selectors'
 import Form from '../pages/Form'
 
 const mapDispatchToProps = {
+    dispatchGetCourse: actions.requestGetCourse,
     dispatchSaveCourse: actions.requestSaveCourse,
 }
 

@@ -19,11 +19,12 @@ const If = ({ children, condition, el }) => {
 }
 
 If.defaultProps = {
+    children: null,
     el: null,
 }
 
 If.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.object, PropTypes.string]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.object, PropTypes.string]),
     condition: PropTypes.bool.isRequired,
     el: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.object, PropTypes.string]),
 }

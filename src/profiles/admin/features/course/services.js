@@ -1,18 +1,25 @@
-import { getUser } from '@utils/auth'
 import { handleAPI } from '@utils/http'
+import { removeKeys } from '@utils/object'
 
+import { addInstructorId, categoriesToArray } from './domains'
 import { apis } from './apis'
 
+const FORBIDDEN_KEYS = ['createdAt', 'instructor', 'updatedAt']
+
 const getAll = payload => handleAPI(apis.getAll, payload)
-const save = payload =>
-    handleAPI(apis.save, {
-        ...payload,
-        categories: payload.categories.replace(/([\s])/g, '').split(','),
-        instructor: getUser().id,
-    })
+const getOne = payload => handleAPI(apis.getOne, payload)
+const remove = payload => handleAPI(apis.remove, payload)
+const save = payload => {
+    if (payload.id) {
+        return handleAPI(apis.update, removeKeys(categoriesToArray(payload), FORBIDDEN_KEYS))
+    }
+    return handleAPI(apis.save, categoriesToArray(addInstructorId(payload)))
+}
 
 const services = {
     getAll,
+    getOne,
+    remove,
     save,
 }
 

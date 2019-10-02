@@ -66,6 +66,7 @@ const messages = {
                 phone: 'Celular',
                 pictureSource: 'Foto de perfil',
                 profile: 'Perfil',
+                published: 'Publicado',
                 reportBug: 'Informe um erro',
                 sections: 'Seções',
                 source: 'Fonte',

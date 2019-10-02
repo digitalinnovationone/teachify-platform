@@ -6,10 +6,13 @@ import { borders } from '@helpers/borders'
 import { colors } from '@helpers/colors'
 
 const StyledListItem = styled.li`
+    align-items: center;
     background: ${({ active }) => (active ? colors.backgroundAltHover : colors.backgroundAlt)};
     border-bottom: ${borders.default};
     color: ${colors.text};
+    display: flex;
     font-weight: 300;
+    justify-content: space-between;
     list-style: none;
     padding: 0.75rem 1rem;
     text-align: left;
@@ -35,7 +38,7 @@ ListItem.defaultProps = {
 
 ListItem.propTypes = {
     active: PropTypes.bool,
-    children: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
     item: PropTypes.object.isRequired,
     onClick: PropTypes.func,
 }

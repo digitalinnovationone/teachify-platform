@@ -79,6 +79,11 @@ const fields = {
         placeholder: i18n.t('labels.pictureSource'),
         type: 'url',
     },
+    published: {
+        name: 'published',
+        placeholder: i18n.t('labels.published'),
+        type: 'checkbox',
+    },
     sectionName: { maxLength: 30, name: 'name', placeholder: i18n.t('labels.name'), type: 'text' },
     source: { maxLength: 255, name: 'source', placeholder: i18n.t('labels.source'), type: 'url' },
     state: { icon: 'fas fa-arrows-alt', maxLength: 30, name: 'address.state', placeholder: i18n.t('labels.state'), type: 'string' },

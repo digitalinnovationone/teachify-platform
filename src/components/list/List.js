@@ -7,14 +7,16 @@ import ButtonEdit, { StyledButtonEdit } from '../ButtonEdit'
 import Icon from '../Icon'
 import ListItem from './ListItem'
 
+const BTN_GAP = '0.25rem 0.5rem'
+
 const StyledList = styled.ul`
     ${StyledButtonCancel} {
-        padding: 0.25rem 0.5rem;
+        padding: ${BTN_GAP};
     }
 
     ${StyledButtonEdit} {
         margin-right: 0.5rem;
-        padding: 0.25rem 0.5rem;
+        padding: ${BTN_GAP};
     }
 `
 

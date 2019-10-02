@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 import { colors } from '@helpers/colors'
 import { dimensions } from '@helpers/dimensions'
+import { zIndexes } from '@helpers/zIndexes'
 
 const StyledMenuLink = styled(NavLink)`
     border-right: 3px solid transparent;
@@ -42,6 +43,7 @@ const StyledMenuLink = styled(NavLink)`
         transform: translate(-200px, -50%);
         transition: transform 0.25s ease-out, opacity 0.5s ease-in;
         white-space: nowrap;
+        z-index: ${zIndexes.menuLinkAfter};
     }
 `
 

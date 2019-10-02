@@ -1,4 +1,5 @@
 const store = {
+    course: {},
     courses: [],
     loading: false,
 }

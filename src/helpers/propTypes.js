@@ -4,7 +4,7 @@ const field = {
     icon: PropTypes.string.isRequired,
     invalid: PropTypes.bool.isRequired,
     mask: PropTypes.object,
-    maxLength: PropTypes.number.isRequired,
+    maxLength: PropTypes.number,
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,

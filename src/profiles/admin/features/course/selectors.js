@@ -7,12 +7,18 @@ const getLoading = createSelector(
     loading => loading,
 )
 
+const getCourse = createSelector(
+    state => state[REDUCER_NAME].course,
+    course => course,
+)
+
 const getCourses = createSelector(
     state => state[REDUCER_NAME].courses,
     courses => courses,
 )
 
 const selectors = {
+    getCourse,
     getCourses,
     getLoading,
 }

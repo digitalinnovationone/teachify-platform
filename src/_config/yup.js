@@ -11,5 +11,6 @@ setLocale({
         email: i18n.t('form.validations.email'),
         max: i18n.t('form.validations.max'),
         min: i18n.t('form.validations.min'),
+        url: i18n.t('form.validations.url'),
     },
 })

@@ -8,6 +8,7 @@ const SIZES = {
     lg: 150,
     md: 100,
     sm: 50,
+    xs: 25,
 }
 
 const rotating = keyframes`
@@ -36,7 +37,7 @@ Loading.defaultProps = {
 }
 
 Loading.propTypes = {
-    size: PropTypes.oneOf(['lg', 'md', 'sm']),
+    size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
 }
 
 export default Loading

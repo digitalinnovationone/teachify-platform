@@ -1,5 +1,6 @@
 const field = {
     mask: {},
+    maxLength: null,
     value: '',
 }
 

@@ -9,6 +9,7 @@ const colors = {
     primaryHover: '#007acc',
     primaryLight: '#e6f5ff',
     success: '#00cc99',
+    successHover: '#009973',
     text: '#454545',
     textAlt: '#fdfdfd',
     textDark: '#333333',

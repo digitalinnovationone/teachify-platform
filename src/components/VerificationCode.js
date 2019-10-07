@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { borders } from '@helpers/borders'
-import { colors } from '@helpers/colors'
 import { inputFocus } from '@helpers/mixins'
 
 import { toInt } from '@utils/number'
@@ -16,9 +14,9 @@ const StyledVerificationCode = styled.div`
 `
 
 const StyledCode = styled.input`
-    border: ${borders.default};
+    border: ${({ theme }) => theme.borders.default};
     border-radius: 5px;
-    color: ${colors.text};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 2rem;
     margin-right: 1rem;
     ${inputFocus};

@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { borders } from '@helpers/borders'
-
 import { getUser } from '@utils/auth'
 import { not } from '@utils/functions'
 
@@ -13,7 +11,7 @@ import Picture from './Picture'
 
 const StyledProfile = styled.div`
     align-items: center;
-    border-left: ${borders.default};
+    border-left: ${({ theme }) => theme.borders.default};
     display: flex;
     height: 100%;
     padding: 0.5rem 1rem;

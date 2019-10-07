@@ -6,8 +6,6 @@ import styled from 'styled-components'
 
 import { i18n } from '@i18n'
 
-import { borders } from '@helpers/borders'
-
 import { isNotEmpty, not } from '@utils/functions'
 
 import ButtonCancel, { StyledButtonCancel } from '../../ButtonCancel'
@@ -19,7 +17,7 @@ import TableBodyColumn from './TableBodyColumn'
 import TableBodyRow from './TableBodyRow'
 
 const StyledTableBody = styled.tbody`
-    border: ${borders.default};
+    border: ${({ theme }) => theme.borders.default};
     border-top: none;
     ${StyledButtonCancel} {
         margin-right: 0;

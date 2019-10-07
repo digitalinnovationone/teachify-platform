@@ -4,13 +4,11 @@ import styled from 'styled-components'
 
 import { i18n } from '@i18n'
 
-import { borders } from '@helpers/borders'
-import { colors } from '@helpers/colors'
 import { paddings } from '@helpers/paddings'
 
 const StyledTableHeaderColumn = styled.th`
-    border-right: ${borders.default};
-    color: ${colors.text};
+    border-right: ${({ theme }) => theme.borders.default};
+    color: ${({ theme }) => theme.colors.text};
     font-weight: 500;
     padding: ${paddings.tableColumn};
     text-align: left;

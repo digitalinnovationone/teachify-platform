@@ -8,7 +8,7 @@ import { routes } from '@routes'
 import { alerts } from '@utils/alert'
 import { getAction } from '@utils/actions'
 import { handleError, handleRequest } from '@utils/sagas'
-import { navigateTo } from '@utils/browser'
+import { THEMES, getTheme, navigateTo, setTheme } from '@utils/browser'
 import { login } from '@utils/auth'
 
 import { actions } from './actions'
@@ -69,6 +69,7 @@ function* signIn({ payload }) {
     try {
         const token = yield handleRequest(services.signIn, payload, actions.setLoading)
         yield login(token)
+        yield setTheme(getTheme() || THEMES.light)
         yield navigateTo(routes.home)
     } catch (error) {
         yield handleError(error, actions.setLoading)

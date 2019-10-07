@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { borders } from '@helpers/borders'
-import { colors } from '@helpers/colors'
-
 import Brand from './Brand'
+import DarkMode from './DarkMode'
 import Profile from './profile'
 
 const StyledHeader = styled.header`
-    background: ${colors.backgroundAlt};
-    border-bottom: ${borders.default};
+    background: ${({ theme }) => theme.colors.backgroundAlt};
+    border-bottom: ${({ theme }) => theme.borders.default};
     display: flex;
     grid-area: header;
     justify-content: space-between;
@@ -18,6 +16,7 @@ const StyledHeader = styled.header`
 const Header = () => (
     <StyledHeader>
         <Brand />
+        <DarkMode />
         <Profile />
     </StyledHeader>
 )

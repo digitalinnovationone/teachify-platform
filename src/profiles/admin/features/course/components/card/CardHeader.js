@@ -2,16 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 import Icon from '@components/Icon'
 import CardButton from './CardButton'
 
 const StyledCardHeader = styled.div`
-    background: ${colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    color: ${colors.textAlt};
+    color: ${({ theme }) => theme.colors.textAlt};
     padding: 1rem;
     position: relative;
 `

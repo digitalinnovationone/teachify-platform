@@ -2,14 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 import Icon from '../Icon'
 
 const StyledDropDown = styled.button`
     background: transparent;
     border: none;
-    color: ${colors.textLight};
+    color: ${({ theme }) => theme.colors.textLight};
     margin-left: 1rem;
 `
 

@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components'
 
 import { nameToPhoto } from '@utils/string'
 
-import { colors } from '@helpers/colors'
-
 import If from './If'
 
 const PICTURE_SIZE = '60px'
@@ -23,8 +21,8 @@ const StyledImage = styled.img`
 `
 
 const StyledAlt = styled.span`
-    background: ${colors.primary};
-    color: ${colors.textAlt};
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textAlt};
     display: inline-block;
     ${photo};
 `

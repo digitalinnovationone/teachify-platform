@@ -5,4 +5,20 @@ const borders = {
     primaryLink: `2px solid ${colors.primary}`,
 }
 
-export { borders }
+const bordersDark = {
+    ...borders,
+    default: '1px solid #999999',
+}
+
+const bordersLight = {
+    ...borders,
+}
+
+const themes = {
+    dark: bordersDark,
+    light: bordersLight,
+}
+
+const getBorders = theme => themes[theme]
+
+export { borders, getBorders }

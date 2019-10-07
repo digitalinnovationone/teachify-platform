@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 import Icon, { StyledIcon } from '../Icon'
 
 const StyledFormIcon = styled.span`
@@ -11,7 +9,7 @@ const StyledFormIcon = styled.span`
     position: absolute;
     top: 13px;
     ${StyledIcon} {
-        color: ${colors.textLight};
+        color: ${({ theme }) => theme.colors.textLight};
     }
 `
 

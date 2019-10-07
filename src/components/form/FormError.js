@@ -4,10 +4,8 @@ import styled from 'styled-components'
 
 import { ErrorMessage } from 'formik'
 
-import { colors } from '@helpers/colors'
-
 const StyledFormError = styled(ErrorMessage)`
-    color: ${colors.error};
+    color: ${({ theme }) => theme.colors.error};
     display: block;
     padding-left: 0.5rem;
     padding-top: 0.25rem;

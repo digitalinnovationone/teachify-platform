@@ -2,10 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 const StyledContainer = styled.main`
-    background: ${colors.background};
+    background: ${({ theme }) => theme.colors.background};
     grid-area: main;
     overflow-y: scroll;
 `

@@ -19,4 +19,26 @@ const colors = {
     warningHover: '#cca300',
 }
 
-export { colors }
+const colorsDark = {
+    ...colors,
+    background: '#595959',
+    backgroundAlt: '#333333',
+    backgroundAltHover: '#4d4d4d',
+    text: '#cccccc',
+    textAlt: '#595959',
+    textDark: '#fdfdfd',
+    textLight: '#999999',
+}
+
+const colorsLight = {
+    ...colors,
+}
+
+const themes = {
+    dark: colorsDark,
+    light: colorsLight,
+}
+
+const getColors = theme => themes[theme]
+
+export { colors, getColors }

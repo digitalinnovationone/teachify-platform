@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { borders } from '@helpers/borders'
-import { colors } from '@helpers/colors'
-
 import MenuList from './MenuList'
 
 const StyledMenu = styled.nav`
-    background: ${colors.backgroundAlt};
-    border-right: ${borders.default};
+    background: ${({ theme }) => theme.colors.backgroundAlt};
+    border-right: ${({ theme }) => theme.borders.default};
     grid-area: menu;
 `
 

@@ -2,10 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 const StyledContainer = styled.div`
-    background: ${colors.backgroundAlt};
+    background: ${({ theme }) => theme.colors.backgroundAlt};
     border-radius: 7px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     display: inline-block;

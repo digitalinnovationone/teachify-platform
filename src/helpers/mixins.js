@@ -12,20 +12,20 @@ const inputFocus = css`
 `
 
 const field = css`
-    background: ${({ invalid }) => (invalid ? colors.errorLight : colors.background)};
+    background: ${({ invalid, theme }) => (invalid ? theme.colors.errorLight : theme.colors.background)};
     border: 1px solid transparent;
     border-radius: 4px;
-    color: ${({ invalid }) => (invalid ? colors.textError : colors.text)};
+    color: ${({ invalid, theme }) => (invalid ? theme.colors.textError : theme.colors.text)};
     font-size: 1.375rem;
     ${inputFocus};
     padding: 1rem ${({ icon }) => (icon.trim() ? 4 : 2)}rem;
     transition: all 0.15s ease-in;
     width: 100%;
     &::placeholder {
-        color: ${({ invalid }) => (invalid ? colors.error : colors.textLight)};
+        color: ${({ invalid, theme }) => (invalid ? theme.colors.error : theme.colors.textLight)};
     }
     &[readonly] {
-        color: ${colors.textLight};
+        color: ${({ theme }) => theme.colors.textLight};
         &:hover {
             cursor: not-allowed;
         }

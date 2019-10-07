@@ -4,13 +4,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { borders } from '@helpers/borders'
-
 import TableHeaderColumn from './TableHeaderColumn'
 
 const StyledTableHeaderRow = styled.tr`
     background: #eef0f6;
-    border: ${borders.default};
+    border: ${({ theme }) => theme.borders.default};
 `
 
 const TableHeaderRow = ({ columns }) => (

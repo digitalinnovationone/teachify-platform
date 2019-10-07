@@ -2,17 +2,15 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 import { StyledIcon } from 'components/Icon'
 
 const StyledOption = styled.li`
-    color: ${colors.text};
+    color: ${({ theme }) => theme.colors.text};
     font-weight: 300;
     list-style: none;
     padding: 1rem;
     &:hover {
-        background: ${colors.backgroundAltHover};
+        background: ${({ theme }) => theme.colors.backgroundAltHover};
         cursor: pointer;
     }
 

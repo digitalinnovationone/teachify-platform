@@ -2,10 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '@helpers/colors'
-
 const StyledName = styled.span`
-    color: ${colors.text};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 0.875rem;
     font-weight: 300;
 `

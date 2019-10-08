@@ -25,7 +25,18 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["chai-expect", "cucumber", "cypress", "jest", "jsx-a11y", "mocha", "prettier", "react", "react-hooks"],
+    "plugins": [
+        "chai-expect",
+        "cucumber",
+        "cypress",
+        "eslint-plugin-import-helpers",
+        "jest",
+        "jsx-a11y",
+        "mocha",
+        "prettier",
+        "react",
+        "react-hooks"
+    ],
     "rules": {
         "array-bracket-spacing": ["error", "never"],
         "array-callback-return": "error",
@@ -54,6 +65,35 @@
             {
                 "before": false,
                 "after": true
+            }
+        ],
+        "import-helpers/order-imports": [
+            "error",
+            {
+                "alphabetize": { "ignoreCase": true, "order": "asc" },
+                "groups": [
+                    "/^@config/",
+                    ["/^@constants/", "/^./constants/"],
+                    "/^@env/",
+                    "module",
+                    ["/^@cfg/", "/^@http/", "/^@i18n/", "/^@mocks/", "/^@routes/"],
+                    "/^@utils/",
+                    "/^@helpers/",
+                    ["/^@features/", "/@profiles/"],
+                    "/^@contexts/",
+                    "/^@containers/",
+                    "/^@hoc/",
+                    "/^@components/",
+                    "parent",
+                    "sibling",
+                    "/^../pages//",
+                    "/^@img/",
+                    "/^@fonts/",
+                    "/^@icons/",
+                    "/^@js/",
+                    "/^@css/"
+                ],
+                "newlinesBetween": "always"
             }
         ],
         "indent": [

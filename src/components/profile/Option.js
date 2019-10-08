@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { StyledIcon } from 'components/Icon'
+import { StyledIcon } from '@components/Icon'
 
 const StyledOption = styled.li`
     color: ${({ theme }) => theme.colors.text};

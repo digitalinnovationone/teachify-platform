@@ -1,9 +1,8 @@
 import { inputTypes } from '@constants/inputTypes'
 
+import { Field } from 'formik'
 import PropTypes from 'prop-types'
 import React from 'react'
-
-import { Field } from 'formik'
 
 import FormArea from './FormArea'
 import FormCheck from './FormCheck'

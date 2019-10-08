@@ -1,8 +1,8 @@
 import { handleAPI } from '@utils/http'
 import { removeKeys } from '@utils/object'
 
-import { addInstructorId, categoriesToArray } from './domains'
 import { apis } from './apis'
+import { addInstructorId, categoriesToArray } from './domains'
 
 const FORBIDDEN_KEYS = ['createdAt', 'instructor', 'updatedAt']
 

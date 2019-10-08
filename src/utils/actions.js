@@ -1,8 +1,7 @@
-import produce from 'immer'
-
-import { createAction as reduxCreateAction, handleActions as raHandeActions } from 'redux-actions'
-
 import { config } from '@config'
+
+import produce from 'immer'
+import { createAction as reduxCreateAction, handleActions as raHandeActions } from 'redux-actions'
 
 const createAction = name => reduxCreateAction(`${config.app.namespace.toUpperCase()}/${name.toUpperCase()}`)
 const getAction = name => `${config.app.namespace.toUpperCase()}/${name.toUpperCase()}`

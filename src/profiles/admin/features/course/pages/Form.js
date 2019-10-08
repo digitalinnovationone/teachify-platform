@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-
 import { withRouter } from 'react-router'
 
 import { i18n } from '@i18n'
@@ -13,9 +12,7 @@ import App from '@containers/App'
 import Align from '@components/Align'
 import ButtonCancel from '@components/ButtonCancel'
 import ButtonSuccess from '@components/ButtonSuccess'
-import Card from '../components/card'
 import Center from '@components/Center'
-import Container from '../components/Container'
 import Flex from '@components/Flex'
 import Form from '@components/form'
 import If from '@components/If'
@@ -26,6 +23,8 @@ import Modal from '@components/Modal'
 import Padding from '@components/Padding'
 import Width from '@components/Width'
 
+import Card from '../components/card'
+import Container from '../components/Container'
 import { clazz as classFields, course as courseFields, section as sectionFields } from '../fields'
 import { clazz as classSchema, course as courseSchema, section as sectionSchema } from '../schemas'
 

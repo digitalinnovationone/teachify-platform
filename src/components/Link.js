@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
-
 import { Link as LinkDOM } from 'react-router-dom'
+import styled from 'styled-components'
 
 const StyledLink = styled(LinkDOM)`
     border-bottom: ${({ theme }) => theme.borders.primaryLink};

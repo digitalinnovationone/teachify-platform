@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
 import { isFunction } from 'lodash'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const If = ({ children, condition, el }) => {
     if (condition) {

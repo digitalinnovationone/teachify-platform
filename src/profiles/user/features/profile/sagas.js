@@ -5,11 +5,11 @@ import { all, put, takeLatest } from 'redux-saga/effects'
 import { i18n } from '@i18n'
 import { routes } from '@routes'
 
-import { alerts } from '@utils/alert'
 import { getAction } from '@utils/actions'
-import { handleError, handleRequest } from '@utils/sagas'
+import { alerts } from '@utils/alert'
 import { logout } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
+import { handleError, handleRequest } from '@utils/sagas'
 
 import { actions } from './actions'
 import { services } from './services'

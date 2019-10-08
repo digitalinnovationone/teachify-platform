@@ -1,19 +1,19 @@
 import { inputTypes } from '@constants/inputTypes'
 
+import { Formik, Form as FormikForm } from 'formik'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Formik, Form as FormikForm } from 'formik'
-
 import Button from '../Button'
 import Empty from '../Empty'
+import If from '../If'
+
 import FormError from './FormError'
 import FormField from './FormField'
 import FormGroup from './FormGroup'
 import FormIcon from './FormIcon'
 import FormPassword from './FormPassword'
-import If from '../If'
 
 const INPUT_TYPES = {
     password: inputTypes.TEXT,

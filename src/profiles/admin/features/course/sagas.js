@@ -5,8 +5,8 @@ import { all, put, takeLatest } from 'redux-saga/effects'
 import { routes } from '@routes'
 
 import { getAction } from '@utils/actions'
-import { handleError, handleRequest } from '@utils/sagas'
 import { navigateTo } from '@utils/browser'
+import { handleError, handleRequest } from '@utils/sagas'
 
 import { actions } from './actions'
 import { categoriesToString } from './domains'

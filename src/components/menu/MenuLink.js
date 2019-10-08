@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
-
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 import { dimensions } from '@helpers/dimensions'
 import { zIndexes } from '@helpers/zIndexes'

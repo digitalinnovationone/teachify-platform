@@ -7,10 +7,11 @@ import { colors } from '@helpers/colors'
 
 import ThemeContext from '@contexts/Theme'
 
+import Logo from '@components/Logo'
+
 import Background from './components/Background'
 import Container from './components/Container'
 import Form from './components/Form'
-import Logo from '@components/Logo'
 
 const Main = styled.main`
     display: flex;

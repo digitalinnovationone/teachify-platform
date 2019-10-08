@@ -8,12 +8,12 @@ import { not } from '@utils/functions'
 import App from '@containers/App'
 
 import Center from '@components/Center'
-import Container from '../components/Container'
 import Form from '@components/form'
 import If from '@components/If'
 import Loading from '@components/Loading'
 import Padding from '@components/Padding'
 
+import Container from '../components/Container'
 import { updatePassword as updatePasswordFields } from '../fields'
 import { updatePassword as updatePasswordSchema } from '../schemas'
 

@@ -1,8 +1,8 @@
 import { environments } from '@constants/environments'
 
-import { config as envConfig } from './env'
-
 import { deepFreeze } from '@utils/object'
+
+import { config as envConfig } from './env'
 
 const config = { ...envConfig() }
 

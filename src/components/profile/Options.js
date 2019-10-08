@@ -5,12 +5,13 @@ import styled from 'styled-components'
 import { i18n } from '@i18n'
 import { routes } from '@routes'
 
-import { zIndexes } from '@helpers/zIndexes'
-
 import { getUser, logout } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
 
+import { zIndexes } from '@helpers/zIndexes'
+
 import Icon from '@components/Icon'
+
 import Option from './Option'
 
 const StyledOptions = styled.ul`

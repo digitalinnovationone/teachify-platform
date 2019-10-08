@@ -1,21 +1,17 @@
-import { environments } from '@constants/environments'
-
-import { createLogger } from 'redux-logger'
-
-import createSagaMiddleware from 'redux-saga'
-
-import { applyMiddleware, compose, createStore } from 'redux'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
-import { composeWithDevTools } from 'redux-devtools-extension'
-
-import { history } from './history'
-import { reducers } from './reducers'
-
-import { sagas } from './sagas'
-
 import { config } from '@config'
 
+import { environments } from '@constants/environments'
+
+import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createLogger } from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
+
+import { history } from './history'
 import { reactotron } from './reactotron'
+import { reducers } from './reducers'
+import { sagas } from './sagas'
 
 const isDevelopment = config.app.environment === environments.development
 

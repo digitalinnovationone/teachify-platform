@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
-
 import { withRouter } from 'react-router'
 
 import { i18n } from '@i18n'
@@ -11,13 +10,13 @@ import App from '@containers/App'
 
 import Button from '@components/Button'
 import Center from '@components/Center'
-import Container from '../components/Container'
 import Form from '@components/form'
 import If from '@components/If'
 import Loading from '@components/Loading'
 import Margin from '@components/Margin'
 import Padding from '@components/Padding'
 
+import Container from '../components/Container'
 import { updateAddress as updateAddressFields, updateProfile as updateProfileFields } from '../fields'
 import { updateAddress as updateAddressSchema, updateProfile as updateProfileSchema } from '../schemas'
 

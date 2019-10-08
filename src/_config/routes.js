@@ -1,25 +1,23 @@
-import React, { Suspense } from 'react'
-
 import { ConnectedRouter } from 'connected-react-router'
+import React, { Suspense } from 'react'
 import { Provider } from 'react-redux'
 import { Switch } from 'react-router'
 
-import { history } from './history'
-import { store } from './store'
-
-import { combineLinkedRoutes, combineRoutes } from '@utils/routes'
 import { isAdmin } from '@utils/auth'
+import { combineLinkedRoutes, combineRoutes } from '@utils/routes'
 
+import { routes as courseRoutes } from '@profiles/admin/features/course/routes'
 import { routes as authRoutes } from '@profiles/user/features/auth/routes'
 import { routes as homeRoutes } from '@profiles/user/features/home/routes'
 import { routes as notFoundRoutes } from '@profiles/user/features/notFound/routes'
 import { routes as profileRoutes } from '@profiles/user/features/profile/routes'
 
-import { routes as courseRoutes } from '@profiles/admin/features/course/routes'
-
 import PageLoading from '@components/PageLoading'
 import PrivateRoute from '@components/PrivateRoute'
 import PublicRoute from '@components/PublicRoute'
+
+import { history } from './history'
+import { store } from './store'
 
 const allRoutes = [authRoutes, homeRoutes, profileRoutes]
 

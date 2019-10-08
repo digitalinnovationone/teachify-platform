@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { inputFocus } from '@helpers/mixins'
-
 import { toInt } from '@utils/number'
+
+import { inputFocus } from '@helpers/mixins'
 
 const StyledVerificationCode = styled.div`
     display: flex;

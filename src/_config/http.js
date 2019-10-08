@@ -1,14 +1,14 @@
-import { times } from '@constants/times'
+import { config } from '@config'
+
 import { CODES } from '@constants/HTTP'
+import { times } from '@constants/times'
 
 import axios from 'axios'
 
-import { config } from '@config'
-
-import { routes as authRoutes } from '@profiles/user/features/auth/routes'
-
 import { getToken, isLogged } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
+
+import { routes as authRoutes } from '@profiles/user/features/auth/routes'
 
 const API_URL = config.api.url
 

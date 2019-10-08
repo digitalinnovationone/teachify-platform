@@ -1,5 +1,5 @@
-import { decoded } from '@utils/jwt'
 import { isEmpty } from '@utils/functions'
+import { decoded } from '@utils/jwt'
 
 const TEACHIFY_ADMIN = '@teachify.com.br'
 const TOKEN_KEY = 'TeachifyPlatformToken'

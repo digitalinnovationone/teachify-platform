@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 import Icon, { StyledIcon } from '../Icon'
 
 const StyledFormPassword = styled.button`
@@ -13,7 +15,7 @@ const StyledFormPassword = styled.button`
     right: 10px;
     top: 18px;
     ${StyledIcon} {
-        color: ${({ theme }) => theme.colors.textLight};
+        color: ${colors.textLight};
     }
 `
 

@@ -2,8 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 const StyledTitle = styled.h2`
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${colors.primary};
     font-size: 2rem;
     font-weight: bold;
 `

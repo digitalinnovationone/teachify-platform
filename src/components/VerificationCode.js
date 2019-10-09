@@ -6,6 +6,8 @@ import styled from 'styled-components'
 
 import { toInt } from '@utils/number'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
 import { inputFocus } from '@helpers/mixins'
 
 const StyledVerificationCode = styled.div`
@@ -14,9 +16,9 @@ const StyledVerificationCode = styled.div`
 `
 
 const StyledCode = styled.input`
-    border: ${({ theme }) => theme.borders.default};
+    border: ${borders.default};
     border-radius: 5px;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
     font-size: 2rem;
     margin-right: 1rem;
     ${inputFocus};

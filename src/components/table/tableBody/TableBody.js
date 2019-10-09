@@ -8,6 +8,8 @@ import { i18n } from '@i18n'
 
 import { isNotEmpty, not } from '@utils/functions'
 
+import { borders } from '@helpers/borders'
+
 import ButtonCancel, { StyledButtonCancel } from '../../ButtonCancel'
 import ButtonEdit, { StyledButtonEdit } from '../../ButtonEdit'
 import Icon from '../../Icon'
@@ -18,7 +20,7 @@ import TableBodyColumn from './TableBodyColumn'
 import TableBodyRow from './TableBodyRow'
 
 const StyledTableBody = styled.tbody`
-    border: ${({ theme }) => theme.borders.default};
+    border: ${borders.default};
     border-top: none;
     ${StyledButtonCancel} {
         margin-right: 0;

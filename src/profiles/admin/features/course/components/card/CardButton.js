@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 import { StyledIcon } from '@components/Icon'
 
 const StyledCardButton = styled.button`
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${colors.primary};
     border-radius: 100%;
-    color: ${({ theme }) => theme.colors.textAlt};
+    color: ${colors.textAlt};
     padding: 0.25rem 0.5rem;
     position: absolute;
     right: 1rem;

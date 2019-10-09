@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
 import { defaultProps } from '@helpers/defaultProps'
 import { propTypes } from '@helpers/propTypes'
 
 const StyledLabel = styled.label`
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
     display: block;
     padding: 0 0.5rem;
     text-align: left;

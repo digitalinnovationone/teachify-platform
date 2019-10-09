@@ -2,11 +2,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
 import { paddings } from '@helpers/paddings'
 
 const StyledTableBodyColumn = styled.td`
-    border-right: ${({ theme }) => theme.borders.default};
-    color: ${({ theme }) => theme.colors.text};
+    border-right: ${borders.default};
+    color: ${colors.text};
     font-size: 0.95rem;
     font-weight: 300;
     padding: ${paddings.tableColumn};

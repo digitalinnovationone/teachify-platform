@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
+
 const StyledListItem = styled.li`
     align-items: center;
-    background: ${({ active }) =>
-        active ? ({ theme }) => theme.colors.backgroundAltHover : ({ theme }) => theme.colors.backgroundAlt};
-    border-bottom: ${({ theme }) => theme.borders.default};
-    color: ${({ theme }) => theme.colors.text};
+    background: ${({ active }) => (active ? colors.backgroundAltHover : colors.backgroundAlt)};
+    border-bottom: ${borders.default};
+    color: ${colors.text};
     display: flex;
     font-weight: 300;
     justify-content: space-between;
@@ -15,7 +17,7 @@ const StyledListItem = styled.li`
     padding: 0.75rem 1rem;
     text-align: left;
     &:hover {
-        background: ${({ theme }) => theme.colors.backgroundAltHover};
+        background: ${colors.backgroundAltHover};
         cursor: pointer;
     }
     &:last-child {

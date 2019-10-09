@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { getUser } from '@utils/auth'
 import { not } from '@utils/functions'
 
+import { borders } from '@helpers/borders'
+
 import DropDown from './DropDown'
 import Name from './Name'
 import Options from './Options'
@@ -11,7 +13,7 @@ import Picture from './Picture'
 
 const StyledProfile = styled.div`
     align-items: center;
-    border-left: ${({ theme }) => theme.borders.default};
+    border-left: ${borders.default};
     display: flex;
     height: 100%;
     padding: 0.5rem 1rem;

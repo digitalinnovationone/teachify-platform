@@ -5,16 +5,18 @@ import styled from 'styled-components'
 import { i18n } from '@i18n'
 import { routes } from '@routes'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
 import { dimensions } from '@helpers/dimensions'
 
 import brand from '@img/brand.png'
 
 const StyledLink = styled(Link)`
-    border-right: ${({ theme }) => theme.borders.default};
+    border-right: ${borders.default};
     padding: 0.9rem;
     width: ${dimensions.menuWidth};
     &:hover {
-        background: ${({ theme }) => theme.colors.backgroundAltHover};
+        background: ${colors.backgroundAltHover};
     }
 `
 

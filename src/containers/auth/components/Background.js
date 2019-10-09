@@ -2,9 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 const StyledAuthor = styled.span`
     bottom: 10px;
-    color: ${({ theme }) => theme.colors.textDark};
+    color: ${colors.textDark};
     display: block;
     left: 50%;
     position: absolute;

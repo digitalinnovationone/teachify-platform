@@ -2,10 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 const StyledTableBodyRow = styled.tr`
-    background: ${({ theme }) => theme.colors.backgroundAlt};
+    background: ${colors.backgroundAlt};
     &:hover {
-        background: ${({ theme }) => theme.colors.backgroundAltHover};
+        background: ${colors.backgroundAltHover};
         cursor: pointer;
     }
 `

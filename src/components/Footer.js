@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
 import { dimensions } from '@helpers/dimensions'
 
 import SocialNetworks from './socialNetworks'
@@ -8,9 +10,9 @@ import Suggestions from './suggestions'
 
 const StyledFooter = styled.footer`
     align-items: center;
-    background: ${({ theme }) => theme.colors.background};
-    border-left: ${({ theme }) => theme.borders.default};
-    border-top: ${({ theme }) => theme.borders.default};
+    background: ${colors.background};
+    border-left: ${borders.default};
+    border-top: ${borders.default};
     display: flex;
     grid-area: footer;
     justify-content: space-between;

@@ -2,15 +2,17 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
+
 import Icon from '../Icon'
 
 const StyledSocialNetworkLink = styled.a`
-    color: ${({ theme }) => theme.colors.text};
+    color: ${colors.text};
     display: block;
     padding-left: 0.75rem;
     transition: all 0.2s linear;
     &:hover {
-        color: ${({ theme }) => theme.colors.primary};
+        color: ${colors.primary};
         transform: scale(1.5);
     }
 `

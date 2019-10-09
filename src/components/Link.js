@@ -3,9 +3,12 @@ import React from 'react'
 import { Link as LinkDOM } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { borders } from '@helpers/borders'
+import { colors } from '@helpers/colors'
+
 const StyledLink = styled(LinkDOM)`
-    border-bottom: ${({ theme }) => theme.borders.primaryLink};
-    color: ${({ primary }) => (primary ? ({ theme }) => theme.colors.primary : ({ theme }) => theme.colors.textDark)};
+    border-bottom: ${borders.primaryLink};
+    color: ${({ primary }) => (primary ? colors.primary : colors.textDark)};
     padding: 0 0.5rem;
     text-decoration: none;
     text-transform: ${({ lower }) => (lower ? 'lowercase' : null)};

@@ -3,24 +3,25 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { colors } from '@helpers/colors'
 import { dimensions } from '@helpers/dimensions'
 import { zIndexes } from '@helpers/zIndexes'
 
 const StyledMenuLink = styled(NavLink)`
     border-right: 3px solid transparent;
-    color: ${({ theme }) => theme.colors.textLight};
+    color: ${colors.textLight};
     display: block;
     font-size: 1.125rem;
     padding: 1rem;
     position: relative;
     text-align: center;
     &.is-active {
-        background: ${({ theme }) => theme.colors.primaryLight};
-        border-right-color: ${({ theme }) => theme.colors.primary};
-        color: ${({ theme }) => theme.colors.primary};
+        background: ${colors.primaryLight};
+        border-right-color: ${colors.primary};
+        color: ${colors.primary};
     }
     &:hover {
-        background: ${({ theme }) => theme.colors.backgroundAltHover};
+        background: ${colors.backgroundAltHover};
         &::after {
             opacity: 1;
             transform: translate(0, -50%);

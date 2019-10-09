@@ -2,8 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import { borders } from '@helpers/borders'
+
 const StyledCardBody = styled.div`
-    border: ${({ theme }) => theme.borders.default};
+    border: ${borders.default};
     border-top: none;
 `
 

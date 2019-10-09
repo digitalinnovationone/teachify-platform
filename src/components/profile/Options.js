@@ -8,6 +8,7 @@ import { routes } from '@routes'
 import { getUser, logout } from '@utils/auth'
 import { navigateTo } from '@utils/browser'
 
+import { colors } from '@helpers/colors'
 import { zIndexes } from '@helpers/zIndexes'
 
 import Icon from '@components/Icon'
@@ -15,7 +16,7 @@ import Icon from '@components/Icon'
 import Option from './Option'
 
 const StyledOptions = styled.ul`
-    background: ${({ theme }) => theme.colors.backgroundAlt};
+    background: ${colors.backgroundAlt};
     border-radius: 7px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
     left: 0;

@@ -13,6 +13,7 @@ const course = object().shape({
     name: schemas.courseName,
     published: schemas.published,
     thumbnail: schemas.thumbnail,
+    transcription: schemas.transcription,
 })
 
 const section = object().shape({

@@ -74,6 +74,7 @@ const messages = {
                 suggestionFeature: 'Sugira uma funcionalidade',
                 teachifyLogo: 'Teachify logo',
                 thumbnail: 'Miniatura',
+                transcription: 'Transcrição',
                 updatePassword: 'Atualizar senha',
                 username: 'Usuário',
             },

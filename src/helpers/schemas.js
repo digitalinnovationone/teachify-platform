@@ -153,6 +153,10 @@ const thumbnail = s()
     .required()
     .label(i18n.t('labels.thumbnail'))
 
+const transcription = s()
+    .min(1)
+    .label(i18n.t('labels.transcription'))
+
 const schemas = {
     address,
     biography,
@@ -179,6 +183,7 @@ const schemas = {
     source,
     state,
     thumbnail,
+    transcription,
 }
 
 export { schemas }
